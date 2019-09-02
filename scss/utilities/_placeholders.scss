@@ -1,0 +1,113 @@
+/* Import of _placeholders.scss */
+
+//==========================================================
+//      Typography Placeholders
+//==========================================================
+
+%container {
+    font-family: $font-stack--primary;
+    color: $color-font--base;
+    font-weight: $font-weight--medium;
+}
+
+%links {
+    font-weight: $font-weight--bold;
+    color: $color-secondary;
+}
+
+%blockquote {
+    font-style: italic;
+    font-size: $font-size--blockquote;
+    border-left: $bdr-width--blockquote $bdr-style--blockquote $bdr-color--blockquote;
+    border-radius: $br-btn;
+    padding: $padding-blockquote;
+    max-width: $width-blockquote;
+    margin: $margin-blockquote;
+}
+
+%headline--primary {
+    font-size: $font-size--headline;
+    color: $color-primary;
+    margin: $margin-headline;
+    max-width: $width-headline;
+}
+
+%headline--secondary {
+    font-weight: $font-weight--light;
+    text-indent: $font-indent;
+}
+
+//==========================================================
+//      Images Placeholders
+//==========================================================
+
+%image{
+    display: block;
+    margin: $margin-img;
+    padding: $padding-img;
+    max-width: 100%;
+}
+
+//==========================================================
+//      Navigation Placeholders
+//==========================================================
+
+%nav-item {
+    padding: $padding-btn;
+    color: $color-font--base;
+    text-align: center;
+    width: $width-navit;
+}
+
+%nav-item-hover {
+    background-color: $color-primary;;
+    border-radius: $br-btn;
+    color: $color-font--alt;
+}
+
+//==========================================================
+//      Button Placeholders
+//==========================================================
+
+%button {
+    width: $width-btn;
+    margin: $margin-btn;
+    border-radius: $br-btn;
+    padding: $padding-btn;
+    color: $color-font--alt;
+    font-weight: $font-weight--bold;
+    text-transform: uppercase;
+    @include mq(desktop) {
+        width: 16%;
+    };
+}
+
+//==========================================================
+//      Forms Placeholders
+//==========================================================
+
+%form-input {
+    width: $width-input;
+    padding: $padding-input;
+    margin: $margin-input;
+    border-bottom: $bdr-width--input $bdr-style--input $color-primary;
+    text-indent: $font-indent;
+    &::placeholder {
+        font-weight: $font-weight--bold;
+        font-size: $font-size--input;
+    }
+}
+
+
+//==========================================================
+//      Forms Placeholders
+//==========================================================
+
+%grid__col {
+    flex-basis: 100%;
+    margin-top: 10px;
+    &.theme__colors {
+        padding: 10px;
+        border-radius: 5px;
+    }
+}

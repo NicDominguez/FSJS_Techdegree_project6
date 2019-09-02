@@ -1,0 +1,36 @@
+
+/* Import of _base.scss */
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-family: $font-stack--primary
+}
+
+.landing {
+    display: none;
+}
+
+section {
+    height: 100vh;
+}
+
+h1 {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+p {
+    line-height: $font-lh--base;
+}
+
+a {
+    text-decoration: none;
+}
+

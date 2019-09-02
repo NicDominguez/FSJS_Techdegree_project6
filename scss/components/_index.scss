@@ -1,0 +1,15 @@
+/* Import of /componenents/_index.scss */
+
+//==========================================================
+//      Import of Components Partials
+//==========================================================
+
+// import the grid component
+@import 'grid';
+
+// NOTE: import other components here:
+
+@import 'typography';
+@import 'images';
+@import 'header';
+

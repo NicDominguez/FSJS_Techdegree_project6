@@ -1,0 +1,51 @@
+
+/* Import of _typography.scss */
+
+//==========================================================
+//      Loading Font-face
+//==========================================================
+
+@if variable-exists(font-url--google) {
+    @import url($font-url--google);
+}
+
+//==========================================================
+//      Typography Styles
+//==========================================================
+
+header{
+    & h1 {
+        font-size: 1.5em;
+        font-style: italic;
+        text-shadow: 7px 7px 7px rgba(0,0,0,0.55);
+    }
+    & nav {
+        text-shadow: 7px 7px 7px rgba(0,0,0,0.55);
+    }
+}
+
+
+
+
+
+//Typography Styles
+
+.container {        
+    @extend %container;
+}
+
+.link {
+    @extend %links;
+}
+
+.blockquote {
+    @extend %blockquote;
+}
+
+.headline--primary {
+    @extend %headline--primary;
+}
+.headline--secondary {
+    @extend %headline--secondary
+}
+

@@ -1,0 +1,43 @@
+/* Import of _mixins.scss */
+
+//==========================================================
+//      Media Query Mixin
+//==========================================================
+
+@mixin mq($breakpoint) {
+    @if $breakpoint == desktop {
+        @media (min-width: $break-desktop) { 
+            @content;
+        }
+    }
+    @else if $breakpoint == maximum {
+        @media (min-width: $break-maximum) {
+            @content;
+        }
+    }
+
+}
+
+//==========================================================
+//      Flexbox Mixin
+//==========================================================
+
+@mixin flex($display:flex, $direction:row, $wrap: wrap, $justify: center) {
+    display: $display;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    @content;
+}
+
+//==========================================================
+//      Background Color Mixin
+//==========================================================
+
+@mixin bg-colors($map) {
+    @each $theme, $color in $map {
+        &--#{$theme} {
+            background-color: $color;
+        }
+    }
+}

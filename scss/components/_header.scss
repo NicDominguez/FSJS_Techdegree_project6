@@ -1,0 +1,18 @@
+/* Import of _navigation.scss */
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-primary;
+    height: 50px;
+    width: 100%;
+
+    padding: 10px;
+    color: $color-font--alt;
+}
+
+nav svg:last-child {
+    fill: white;
+}
