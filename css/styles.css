@@ -391,10 +391,6 @@ template {
   display: none;
 }
 
-section {
-  height: 100vh;
-}
-
 h1 {
   margin: 0;
 }
@@ -413,6 +409,167 @@ a {
 
 /* Import of /componenents/_index.scss */
 /* Import of _grids.scss */
+section {
+  height: 100vh;
+  padding: 5%;
+}
+
+.home-section {
+  background-image: url(../images/IMG_1139.JPG);
+  background-size: cover;
+  background-position: center;
+}
+.home-section .blur-wrapper {
+  width: 100%;
+  height: calc(100% - 50px);
+  margin-top: 50px;
+  background-color: #FDFFFB;
+}
+.home-section .design-card {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+}
+.home-section .design2-card, .home-section .design3-card {
+  display: none;
+}
+
+.about-section .img-wrapper {
+  width: 75px;
+  height: 75px;
+}
+.about-section .page-menu {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+.about-section h4 {
+  font-size: 1.3em;
+  text-align: center;
+}
+.about-section .skills-list {
+  margin-top: 20px;
+  display: flex;
+  flex-flow: column;
+  padding-left: 20px;
+}
+.about-section .skills-list li {
+  display: flex;
+  margin-bottom: 20px;
+}
+.about-section .skills-list li p {
+  margin-right: 10px;
+}
+.about-section .skills-list li span {
+  background-color: grey;
+  width: 200px;
+  text-align: end;
+  padding: 5px 10px;
+  color: #FDFFFB;
+  border-radius: 20px;
+}
+
+.portfolio-section h3 {
+  text-align: center;
+  margin-top: 50px;
+}
+.portfolio-section ul {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.portfolio-section ul li img {
+  height: 30px;
+  width: 30px;
+}
+
+.portfolio-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.portfolio-wrapper h4 {
+  flex-basis: 100%;
+  text-align: center;
+}
+.portfolio-wrapper span {
+  flex-basis: 15%;
+  text-align: center;
+}
+.portfolio-wrapper .project-container {
+  flex-basis: 70%;
+  background-color: #E48200;
+  padding: 10px;
+}
+.portfolio-wrapper .project-container .img-wrapper {
+  border-radius: 0;
+  margin: 0;
+  width: 100%;
+}
+.portfolio-wrapper a {
+  background-color: #17384B;
+  color: #FDFFFB;
+  width: 40%;
+  padding: 5px 20px;
+  margin: 10px auto;
+  font-size: 0.8em;
+}
+
+.resume-section h3 {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.timeline-container {
+  width: 80%;
+  height: 450px;
+  margin: 30px auto;
+  border-radius: 20px;
+  background-color: -moz-linear-gradient(left, #FDFFFB 0%, #AFC7C7 36%, #839595 100%);
+  background: -webkit-linear-gradient(left, #FDFFFB 0%, #AFC7C7 36%, #839595 100%);
+  background: linear-gradient(to right, #FDFFFB 0%, #AFC7C7 36%, #839595 100%);
+}
+.timeline-container ul {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+}
+
+.contact-section ul {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  background-color: #17384B;
+  margin-top: 50px;
+  margin-left: 15%;
+}
+.contact-section ul li {
+  color: #FDFFFB;
+  font-size: 2em;
+}
+.contact-section ul li p {
+  width: 50%;
+}
+.contact-section ul li svg {
+  width: 50px;
+  height: 50px;
+}
+.contact-section ul li svg path {
+  fill: #E48200;
+}
+
+footer {
+  background-color: #839595;
+  color: #FDFFFB;
+  text-align: center;
+  height: 50px;
+  padding-top: 10px;
+}
+
 /* Import of _typography.scss */
 header h1 {
   font-size: 1.5em;
@@ -423,12 +580,22 @@ header nav {
   text-shadow: 7px 7px 7px rgba(0, 0, 0, 0.55);
 }
 
+.home-section p {
+  font-size: 1.2em;
+}
+
+h4 {
+  font-size: 2em;
+  margin: 10px auto 30px auto;
+}
+
 /* Import of _images.scss */
 .img-wrapper {
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   background-color: grey;
+  margin-top: 20px;
 }
 
 /* Import of _navigation.scss */
