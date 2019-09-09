@@ -4,39 +4,6 @@
 /* Import of _variables.scss */
 /* Import of _mixins.scss */
 /* Import of _placeholders.scss */
-.container {
-  font-family: "Didact Gothic", sans-serif;
-  color: #102126;
-  font-weight: 400;
-}
-
-.link {
-  font-weight: 700;
-  color: #839595;
-}
-
-.blockquote {
-  font-style: italic;
-  font-size: 1.5em;
-  border-left: 10px solid #17384B;
-  border-radius: 5px;
-  padding: 0 5%;
-  max-width: 90%;
-  margin: 5% 0 5% 5%;
-}
-
-.headline--primary {
-  font-size: 1.75em;
-  color: #17384B;
-  margin: 5% 0 5% 5%;
-  max-width: 80%;
-}
-
-.headline--secondary {
-  font-weight: 300;
-  text-indent: 10px;
-}
-
 /* Import of /base/_index.scss */
 /* Import of normalize.scss */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -387,6 +354,17 @@ template {
   font-family: "Didact Gothic", sans-serif;
 }
 
+body {
+  scroll-snap-type: y mandatory;
+  scroll-padding: 50px;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+  padding: 5%;
+}
+
 .landing {
   display: none;
 }
@@ -409,11 +387,6 @@ a {
 
 /* Import of /componenents/_index.scss */
 /* Import of _grids.scss */
-section {
-  height: 100vh;
-  padding: 5%;
-}
-
 .home-section {
   background-image: url(../images/IMG_1139.JPG);
   background-size: cover;
@@ -508,6 +481,18 @@ section {
   margin: 0;
   width: 100%;
 }
+.portfolio-wrapper ul {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 100px;
+}
+.portfolio-wrapper ul li {
+  background-color: #17384B;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
 .portfolio-wrapper a {
   background-color: #17384B;
   color: #FDFFFB;
@@ -541,24 +526,30 @@ section {
 
 .contact-section ul {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row wrap;
   justify-content: space-around;
   background-color: #17384B;
   margin-top: 50px;
-  margin-left: 15%;
+  margin-left: 10%;
+  height: 90%;
+  padding: 20px;
 }
 .contact-section ul li {
   color: #FDFFFB;
-  font-size: 2em;
+  font-size: 1.7em;
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
 }
 .contact-section ul li p {
-  width: 50%;
+  flex-basis: 50%;
 }
 .contact-section ul li svg {
   width: 50px;
   height: 50px;
+  flex-basis: 50%;
 }
-.contact-section ul li svg path {
+.contact-section ul li svg path:nth-of-type(1) {
   fill: #E48200;
 }
 
@@ -568,6 +559,44 @@ footer {
   text-align: center;
   height: 50px;
   padding-top: 10px;
+}
+
+.timeline-wrapper {
+  margin-top: 3%;
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: whitesmoke;
+  width: 100%;
+  height: 80%;
+}
+.timeline-wrapper .year-button-prev,
+.timeline-wrapper .year-button-next {
+  background-color: blue;
+  flex-basis: 20%;
+}
+
+.yearlist-container {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10% 5% 10% 10%;
+  margin-right: 5%;
+  font-style: italic;
+  z-index: 1;
+  border-right: solid 1px black;
+}
+.yearlist-container li {
+  margin: 10% 0;
+}
+
+.resume-container {
+  height: 100%;
+}
+.resume-container .description-container {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
 }
 
 /* Import of _typography.scss */
@@ -587,6 +616,13 @@ header nav {
 h4 {
   font-size: 2em;
   margin: 10px auto 30px auto;
+}
+
+.title {
+  color: #17384B;
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 50px;
 }
 
 /* Import of _images.scss */

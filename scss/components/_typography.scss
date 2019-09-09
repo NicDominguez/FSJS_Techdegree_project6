@@ -33,26 +33,9 @@ h4 {
     margin: 10px auto 30px auto;
 }
 
-
-
-//Typography Styles
-
-.container {        
-    @extend %container;
+.title {
+    color: $color-primary;
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 50px;
 }
-
-.link {
-    @extend %links;
-}
-
-.blockquote {
-    @extend %blockquote;
-}
-
-.headline--primary {
-    @extend %headline--primary;
-}
-.headline--secondary {
-    @extend %headline--secondary
-}
-
