@@ -4,25 +4,89 @@
     background-image: url(../images/IMG_1139.JPG);
     background-size: cover;
     background-position: center;
-    & .blur-wrapper {
-    width: 100%;
-    height: calc(100% - 50px);
-    margin-top: 50px;
-    background-color: $white;
-    }
-    & .design-card {
+}
+
+.values-container {
     display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 10px;
+    flex-flow: row nowrap;
+    overflow: scroll;
+    height: 100%;
+    scroll-snap-type: x mandatory;
+
+    & .previous-arrow,
+      .next-arrow {
+        position: relative;
+        font-size: 4em;
+        color: $color-primary;
+        z-index: 2;
+
+        @include mq(desktop) {
+            display: none
+        }
+    }
+    & .previous-arrow {
+        top: 22%;
+        right: 25%;
     }
 
-    .design2-card, .design3-card {
-        display: none;
+    & .next-arrow {
+        bottom: 20%;
+        left: 25%;
+    }
+
+    @include mq(desktop) {
+        flex-direction: column;
     }
 }
 
+.blur {
+    position: absolute;
+    height: calc(100vh - 5% - 50px);
+    min-width: 90%;
+    background-color:rgba(255, 255, 255, 0.5);
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    z-index: 1;
+    border-radius: 20px;
+}
+
+.values-card {
+    scroll-snap-align: start;
+    display: inline-flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+    font-size: 0.8em;
+    min-width: 100%;
+    z-index: 2;
+
+    & h4 {
+        text-align: center;
+    }
+
+    & .text-wrapper {
+        width: 90%;
+    }
+
+    @include mq(desktop) {
+        flex-flow: row wrap;
+        padding: 2% 3%;
+        & .text-wrapper {
+            flex-basis: 60%;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            margin: 0 auto;
+            
+
+            & h4 {
+                margin-left: 0;
+            }
+        }
+    }
+
+}
 
 .about-section {
     & .img-wrapper {

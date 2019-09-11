@@ -355,14 +355,20 @@ template {
 }
 
 body {
+  min-width: 320px;
+}
+
+main {
+  height: calc(100vh * 5 + 50px);
   scroll-snap-type: y mandatory;
   scroll-padding: 50px;
 }
 
 section {
   height: 100vh;
+  display: block;
   scroll-snap-align: start;
-  padding: 5%;
+  padding: calc(5% + 50px) 5% 5% 5%;
 }
 
 .landing {
@@ -392,21 +398,84 @@ a {
   background-size: cover;
   background-position: center;
 }
-.home-section .blur-wrapper {
-  width: 100%;
-  height: calc(100% - 50px);
-  margin-top: 50px;
-  background-color: #FDFFFB;
-}
-.home-section .design-card {
+
+.values-container {
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 10px;
+  flex-flow: row nowrap;
+  overflow: scroll;
+  height: 100%;
+  scroll-snap-type: x mandatory;
 }
-.home-section .design2-card, .home-section .design3-card {
-  display: none;
+.values-container .previous-arrow,
+.values-container .next-arrow {
+  position: relative;
+  font-size: 4em;
+  color: #17384B;
+  z-index: 2;
+}
+@media (min-width: 767px) {
+  .values-container .previous-arrow,
+.values-container .next-arrow {
+    display: none;
+  }
+}
+.values-container .previous-arrow {
+  top: 22%;
+  right: 25%;
+}
+.values-container .next-arrow {
+  bottom: 20%;
+  left: 25%;
+}
+@media (min-width: 767px) {
+  .values-container {
+    flex-direction: column;
+  }
+}
+
+.blur {
+  position: absolute;
+  height: calc(100vh - 5% - 50px);
+  min-width: 90%;
+  background-color: rgba(255, 255, 255, 0.5);
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  z-index: 1;
+  border-radius: 20px;
+}
+
+.values-card {
+  scroll-snap-align: start;
+  display: inline-flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 3%;
+  font-size: 0.8em;
+  min-width: 100%;
+  z-index: 2;
+}
+.values-card h4 {
+  text-align: center;
+}
+.values-card .text-wrapper {
+  width: 90%;
+}
+@media (min-width: 767px) {
+  .values-card {
+    flex-flow: row wrap;
+    padding: 2% 3%;
+  }
+  .values-card .text-wrapper {
+    flex-basis: 60%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .values-card .text-wrapper h4 {
+    margin-left: 0;
+  }
 }
 
 .about-section .img-wrapper {
@@ -615,7 +684,7 @@ header nav {
 
 h4 {
   font-size: 2em;
-  margin: 10px auto 30px auto;
+  margin: 5px auto 10px auto;
 }
 
 .title {
@@ -628,8 +697,12 @@ h4 {
 /* Import of _images.scss */
 .img-wrapper {
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  min-width: 100px;
+  min-height: 100px;
+  max-width: 200px;
+  max-height: 200px;
+  width: 30vw;
+  height: 30vw;
   background-color: grey;
   margin-top: 20px;
 }
@@ -643,6 +716,7 @@ header {
   background-color: #17384B;
   height: 50px;
   width: 100%;
+  z-index: 3;
   padding: 10px;
   color: #FDFFFB;
 }

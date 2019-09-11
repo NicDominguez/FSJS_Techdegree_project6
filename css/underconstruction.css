@@ -1,0 +1,53 @@
+body {
+    background-color: #17384B;
+}
+
+h1 {
+    transform: rotate(-20deg) translateX(300px) translateY(50px);
+    color: white
+}
+
+.img-wrapper {
+    position: absolute;
+    z-index: -1;
+    left: 35%;
+    top: 10%;
+    width: 30vw;
+    height: 30vw;
+    transform: rotate(90deg);
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+h4 {
+    margin-top: 40%;
+}
+
+h4,
+p,
+ul {
+    text-align: center;
+    color: white;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: lightgray;
+}
