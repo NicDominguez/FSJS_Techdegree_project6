@@ -22,22 +22,23 @@
 //      Flexbox Mixin
 //==========================================================
 
-@mixin flex($display:flex, $direction:row, $wrap: wrap, $justify: center) {
+@mixin flex($display:flex, $direction:row, $wrap: wrap, $justify:center, $align:center) {
     display: $display;
     flex-direction: $direction;
     flex-wrap: $wrap;
     justify-content: $justify;
+    align-items: $align;
     @content;
 }
 
 //==========================================================
-//      Background Color Mixin
+//      Background Mixin
 //==========================================================
 
-@mixin bg-colors($map) {
-    @each $theme, $color in $map {
-        &--#{$theme} {
-            background-color: $color;
-        }
-    }
+@mixin background($imgpath, $size, $position:0 0, $repeat:no-repeat) {
+    background-image: url($imgpath);
+    background-size: $size;
+    background-position: $position;
+    background-repeat: $repeat;
+    @content;
 }

@@ -1,0 +1,339 @@
+/* Import of layout.scss */
+
+//==========================================================
+//      Home Section
+//==========================================================
+
+.home-section {
+    @include background('../images/IMG_1139.JPG', cover, center, no-repeat);
+}
+
+.values-container {
+    @include flex(flex, row, nowrap, flex-start);
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 100%;
+    scroll-snap-type: x mandatory;
+
+    @include mq(tablet) {
+        flex-direction: column;
+    }
+}
+
+.blur {
+    position: absolute;
+    height: calc(100vh - 5% - 50px);
+    min-width: 300%;
+    background-color:rgba(255, 255, 255, 0.5);
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    z-index: 1;
+}
+
+.previous-arrow,
+.next-arrow {
+    position: absolute;
+    font-size: 4em;
+    color: $color-primary;
+    z-index: 2;
+    top: 15vw;
+
+    @include mq(tablet) {
+        display: none
+    }
+}
+
+.previous-arrow {
+    left: 15%;
+}
+
+.next-arrow {
+    right: 15%;
+}
+
+.values-card {
+    @include flex(inline-flex, column, nowrap, flex-start, center);
+    position: relative;
+    scroll-snap-align: start;
+    padding: 10% 3%;
+    height: calc(100vh - 5% - 50px);
+    font-size: 0.8em;
+    min-width: 100%;
+    z-index: 2;
+
+    & img {
+        border-radius: 50%;
+        max-width: 200px;
+        max-height: 200px;
+        width: 30vw;
+        height: 30vw;
+        background-color: grey;
+    }
+
+    & h4 {
+        text-align: center;
+        margin-top: 5%;
+    }
+
+
+
+    @include mq(tablet) {
+        flex-flow: row wrap;
+        padding: 2% 3%;
+    }
+}
+
+.text-wrapper {
+    width: 90%;
+    @include mq(tablet) {
+        & .text-wrapper {
+            @include flex(flex, column, nowrap, center, center);
+            flex-basis: 60%;
+            margin: 0 auto;
+        }
+            
+
+        & h4 {
+            margin-left: 0;
+        }
+    }
+}
+
+//==========================================================
+//      About Section
+//==========================================================
+
+
+.about-section {
+    @include background('../images/orange_triangle_background.svg', cover, center, no-repeat);
+    &  img {
+    width: 50px;
+    height: 50px;
+    }
+    & .category-menu {
+        @include flex(flex, row, nowrap, space-around, center);
+
+        & .skill-category {
+            @include flex(flex, column, nowrap, space-around, center);
+
+        }
+    }
+    & h4 {
+        font-size: 1.3em;
+        text-align: center;
+    }
+}
+
+.skills-list {
+    @include flex(flex, column, nowrap, space-around, center);
+    margin-top: 20px;
+    padding-left: 20px;
+    & li {
+        display: flex;
+        margin-bottom: 20px;
+        & p {
+            flex-basis: 33%;
+            margin-right: 10px;
+        }
+        & span {
+            background-color: $color-secondary;
+            width: 200px;
+            text-align: end;
+            padding: 5px 10px;
+            color: $color-font--alt;
+            border-radius: 20px;
+        }
+    }
+}
+
+//==========================================================
+//     Portfolio Section
+//==========================================================
+
+
+.portfolio-section {
+    & h3 {
+        text-align: center;
+        font-weight: 100;
+    }
+    & ul {
+        @include flex(flex, row, nowrap, space-between, center);
+        margin-top: 20px;
+        margin-bottom: 10px;
+        & li img {
+            height: 40px;
+            width: 40px;
+        }
+    }
+
+}
+
+.portfolio-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    border-top: dashed 2px black;
+    padding-top: 10px;
+    & h4 {
+        flex-basis: 100%;
+        font-size: 1.5em;
+        text-align: center;
+    }
+    & span {
+        flex-basis: 15%;
+        font-size: 2em;
+        text-align: center;
+    }
+    & .project-container {
+        flex-basis: 70%;
+        background-color: $color-accent;
+        height: 25vh;
+        padding: 10px;
+        & img {
+            border-radius: 0;
+            margin: 0;
+            width: 100%;
+        }    
+    }
+    & ul {
+        flex-basis: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin: 10px 100px;
+        & li {
+            background-color: $color-primary;
+            border-radius: 50%;
+            width:  10px;
+            height: 10px;
+        }
+    }
+    & a {
+        background-color: $color-primary;
+        color: $white;
+        width: 45%;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 5px 20px;
+        margin: 10px auto;
+        font-size: 0.7em;
+    }
+}
+
+//==========================================================
+//      Resume Section
+//==========================================================
+
+
+.resume-section {
+    @include background('../images/blue_triangle_background.svg', cover, center, no-repeat);
+    & h3 {
+        text-align: center;
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+}
+
+.timeline-container {
+    margin-top: 3%;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 80%;
+    border-radius: 20px;
+    background: #FFFFFF;
+    background: -moz-linear-gradient(left, transparent 15%, #E48200 100%);
+    background: -webkit-linear-gradient(left, transparent 15%, #E48200 100%);
+    background: linear-gradient(to right, transparent 15%, #E48200 100%);
+
+    & ul {
+        @include flex(flex, column, nowrap, space-around, center);
+        height: 100%;
+        width: 30%;
+    }
+
+
+    & .year-button-prev,
+    .year-button-next {
+        background-color: blue;
+        flex-basis: 20%;
+    }
+
+}
+
+.yearlist-container {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10% 2% 10% 2%;
+    font-style: italic;
+    z-index: 1;
+    border-right: solid 1px black;
+    & li {
+        margin: 20% 0;
+    }
+}
+
+.resume-container {
+    height: 100%;
+    width: 70%;
+    color: $color-font--alt;
+    & .description-container {
+        height: 100%;
+        padding: 15% 2% 10% 2%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+    }
+}
+
+//==========================================================
+//      Contact Section
+//==========================================================
+
+
+.contact-section {
+    @include background('../images/blue_trapazoid_background.svg', cover, center, no-repeat);
+    & ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    height: 90%;
+    padding: 20px;
+        & li {
+            color: $color-font--alt;
+            font-size: 1.7em;
+            flex-basis: 100%;
+            display: flex;
+            align-items: center;
+            & p {
+                flex-basis: 50%;
+            }
+            & svg {
+                width: 50px;
+                height: 50px;
+                flex-basis: 50%;
+                & path:nth-of-type(1) {
+                    fill: $color-accent;
+                }
+                
+            }
+        }
+    }
+
+
+}
+
+//==========================================================
+//      Footer
+//==========================================================
+
+
+footer {
+    scroll-snap-align: end;
+    background-color: $color-secondary;
+    color: $color-font--alt;
+    text-align: center;
+    height: 50px;
+    padding-top: 10px;
+}
