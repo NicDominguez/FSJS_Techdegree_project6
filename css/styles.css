@@ -705,9 +705,11 @@ nav svg:last-child {
     border: solid 1px black;
     width: 97%;
     background-color: #839595;
-    height: 100%;
+    height: 101%;
     padding: 3vh 10vw;
+    justify-content: flex-start;
     align-items: flex-start;
+    align-content: flex-start;
     color: #FDFFFB;
   }
 }
@@ -718,10 +720,14 @@ nav svg:last-child {
 }
 @media (min-width: 767px) {
   .portfolio-wrapper h4 {
+    flex-basis: 40%;
+    align-self: flex-start;
+    margin: 5px 0;
     font-size: 1.8em;
     order: 2;
     color: #17384B;
     text-decoration: underline;
+    text-align: left;
   }
 }
 .portfolio-wrapper span {
@@ -772,13 +778,20 @@ nav svg:last-child {
 
 @media (min-width: 767px) {
   .project-info-container {
+    position: relative;
     order: 3;
   }
 }
 @media (min-width: 767px) {
   .project-info-container p {
     font-size: 1em;
+    margin: 20px 0;
   }
+}
+.project-info-container p span {
+  display: inline;
+  font-size: 1.3em;
+  margin-right: 30px;
 }
 .project-info-container a {
   background-color: #17384B;
@@ -792,8 +805,20 @@ nav svg:last-child {
 }
 @media (min-width: 767px) {
   .project-info-container a {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    background: none;
     font-size: 0.8em;
-    flex-basis: 28%;
+    bottom: 105%;
+    left: 30%;
+    width: 40%;
+    margin-top: 5px;
+  }
+}
+@media (min-width: 767px) {
+  .project-info-container a:nth-of-type(2) {
+    left: 60%;
   }
 }
 
@@ -822,40 +847,43 @@ nav svg:last-child {
 
 @media (min-width: 767px) {
   .book-container {
+    position: relative;
     background-color: #607782;
-    height: 100%;
+    height: 101%;
     border: solid 1px black;
     padding: 2px 0;
   }
 }
 
-.page-flag {
-  position: absolute;
-  left: 92.7%;
-  width: 0;
-  height: 0;
-  border-top: solid 10px #FDFFFB;
-  border-right: solid 10px transparent;
-  border-bottom: solid 10px #FDFFFB;
-  border-left: solid 24px #FDFFFB;
-}
-.page-flag:nth-of-type(1) {
-  top: 25%;
-  left: 88%;
-  border-top: solid 10px #E48200;
-  border-right: solid 10px transparent;
-  border-bottom: solid 10px #E48200;
-  border-left: solid 60px #E48200;
-  z-index: 2;
-}
-.page-flag:nth-of-type(2) {
-  top: 30%;
-}
-.page-flag:nth-of-type(3) {
-  top: 35%;
-}
-.page-flag:nth-of-type(4) {
-  top: 40%;
+@media (min-width: 767px) {
+  .page-flag {
+    position: absolute;
+    left: 97%;
+    width: 0;
+    height: 0;
+    border-top: solid 10px #FDFFFB;
+    border-right: solid 10px transparent;
+    border-bottom: solid 10px #FDFFFB;
+    border-left: solid 24px #FDFFFB;
+  }
+  .page-flag:nth-of-type(1) {
+    top: 10%;
+    left: 92%;
+    border-top: solid 10px #E48200;
+    border-right: solid 10px transparent;
+    border-bottom: solid 10px #E48200;
+    border-left: solid 60px #E48200;
+    z-index: 2;
+  }
+  .page-flag:nth-of-type(2) {
+    top: 20%;
+  }
+  .page-flag:nth-of-type(3) {
+    top: 30%;
+  }
+  .page-flag:nth-of-type(4) {
+    top: 40%;
+  }
 }
 
 .resume-section {
@@ -929,12 +957,22 @@ nav svg:last-child {
   background-position: center;
   background-repeat: no-repeat;
 }
+@media (min-width: 767px) {
+  .contact-section {
+    background-image: url(../images/blue_trapazoid_background.svg), url(../images/IMG_1986.jpg);
+  }
+}
 .contact-section ul {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   height: 80vh;
   padding: 8vw;
+}
+@media (min-width: 767px) {
+  .contact-section ul {
+    padding-left: 0;
+  }
 }
 .contact-section ul li {
   color: #FDFFFB;
@@ -945,17 +983,27 @@ nav svg:last-child {
 }
 @media (min-width: 767px) {
   .contact-section ul li {
-    text-align: center;
+    text-align: left;
     font-size: 2em;
   }
 }
 .contact-section ul li p {
   flex-basis: 50%;
 }
+@media (min-width: 767px) {
+  .contact-section ul li p {
+    flex-basis: 20%;
+  }
+}
 .contact-section ul li svg {
   width: 10vw;
   height: 10vw;
   flex-basis: 50%;
+}
+@media (min-width: 767px) {
+  .contact-section ul li svg {
+    flex-basis: 20%;
+  }
 }
 .contact-section ul li svg path:nth-of-type(1) {
   fill: #E48200;

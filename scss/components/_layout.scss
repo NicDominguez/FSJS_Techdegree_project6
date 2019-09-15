@@ -232,9 +232,11 @@
         border: solid 1px black;
         width: 97%;
         background-color: $color-secondary;
-        height: 100%;
+        height: 101%;
         padding: 3vh 10vw;
+        justify-content: flex-start;
         align-items: flex-start;
+        align-content: flex-start;
         color: $color-font--alt;
     }
 
@@ -243,10 +245,14 @@
         font-size: 1.5em;
         text-align: center;
         @include mq(tablet) {
+            flex-basis: 40%;
+            align-self: flex-start;
+            margin: 5px 0;
             font-size: 1.8em;
             order: 2;
             color: $color-primary;
             text-decoration: underline;
+            text-align: left;
         }
     }
 
@@ -293,14 +299,23 @@
 }
 
 .project-info-container {
-
+    
     @include mq(tablet) {
+        position: relative;
         order: 3;
+        
     }
 
     & p {
         @include mq(tablet) {
-        font-size: 1em;
+            font-size: 1em;
+            margin: 20px 0;
+        }
+
+        & span {
+            display: inline;
+            font-size: 1.3em;
+            margin-right: 30px;
         }
     }
 
@@ -314,8 +329,20 @@
         margin: 10px auto;
         font-size: 0.7em;
         @include mq(tablet) {
+            position: absolute;
+            padding: 0 ;
+            margin: 0;
+            background: none;
             font-size: 0.8em;
-            flex-basis: 28%;
+            bottom: 105%;
+            left: 30%;
+            width: 40%;
+            margin-top: 5px;
+        }
+        &:nth-of-type(2) {
+            @include mq(tablet) {
+                left: 60%;
+            }
         }
     }
 }
@@ -344,8 +371,9 @@
 
 .book-container {
     @include mq(tablet){
+        position: relative;
         background-color: #607782;
-        height: 100%;
+        height: 101%;
         border: solid 1px black;
         padding: 2px 0;
     }
@@ -353,35 +381,37 @@
 
 
 .page-flag {
-    position: absolute;
-    left: 92.7%;
-    width: 0;
-    height: 0;
-    border-top: solid 10px $color-font--alt;
-    border-right: solid 10px transparent;
-    border-bottom: solid 10px $color-font--alt;
-    border-left: solid 24px $color-font--alt;
-
-    &:nth-of-type(1) {
-        top: 25%;
-        left: 88%;
-        border-top: solid 10px $color-accent;
+    @include mq(tablet) {
+        position: absolute;
+        left: 97%;
+        width: 0;
+        height: 0;
+        border-top: solid 10px $color-font--alt;
         border-right: solid 10px transparent;
-        border-bottom: solid 10px $color-accent;
-        border-left: solid 60px $color-accent;
-        z-index: 2;
-    }
+        border-bottom: solid 10px $color-font--alt;
+        border-left: solid 24px $color-font--alt;
 
-    &:nth-of-type(2) {
-        top: 30%;
-    }
+        &:nth-of-type(1) {
+            top: 10%;
+            left: 92%;
+            border-top: solid 10px $color-accent;
+            border-right: solid 10px transparent;
+            border-bottom: solid 10px $color-accent;
+            border-left: solid 60px $color-accent;
+            z-index: 2;
+        }
 
-    &:nth-of-type(3) {
-        top: 35%;
-    }
+        &:nth-of-type(2) {
+            top: 20%;
+        }
 
-    &:nth-of-type(4) {
-        top: 40%;
+        &:nth-of-type(3) {
+            top: 30%;
+        }
+
+        &:nth-of-type(4) {
+            top: 40%;
+        }
     }
 }
 
@@ -461,12 +491,20 @@
 
 .contact-section {
     @include background('../images/blue_trapazoid_background.svg', cover, center, no-repeat);
+    @include mq(tablet) {
+        background-image: url(../images/blue_trapazoid_background.svg), url(../images/IMG_1986.jpg);
+    }
+    
     & ul {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
     height: 80vh;
     padding: 8vw;
+    @include mq(tablet) {
+        padding-left: 0;
+    }
+
         & li {
             color: $color-font--alt;
             font-size: 1.7em;
@@ -474,16 +512,25 @@
             display: flex;
             align-items: center;
             @include mq(tablet) {
-                text-align: center;
+                text-align: left;
                 font-size: 2em;
             }
+
             & p {
                 flex-basis: 50%;
+                @include mq(tablet) {
+                    flex-basis: 20%;
+                }
             }
+
             & svg {
                 width: 10vw;
                 height: 10vw;
                 flex-basis: 50%;
+                @include mq(tablet) {
+                    flex-basis: 20%;
+                }
+
                 & path:nth-of-type(1) {
                     fill: $color-accent;
                 }
