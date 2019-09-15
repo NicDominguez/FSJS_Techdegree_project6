@@ -19,6 +19,10 @@
     @include mq(tablet) {
         flex-direction: column;
     }
+
+    @include mq(landscape) {
+        overflow-y: scroll;
+    }
 }
 
 .blur {
@@ -26,9 +30,13 @@
     height: calc(100vh - 5% - 50px);
     min-width: 300%;
     background-color:rgba(255, 255, 255, 0.5);
+    border: solid 3px $color-secondary;
     filter: blur(5px);
     -webkit-filter: blur(5px);
     z-index: 1;
+    @include mq(tablet) {
+        min-width: 100%;
+    }
 }
 
 .previous-arrow,
@@ -79,26 +87,27 @@
 
 
     @include mq(tablet) {
-        flex-flow: row wrap;
-        padding: 2% 3%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 3%;
     }
 }
 
 .text-wrapper {
     width: 90%;
     @include mq(tablet) {
-        & .text-wrapper {
             @include flex(flex, column, nowrap, center, center);
-            flex-basis: 60%;
-            margin: 0 auto;
+            flex-basis: 65%;
+            padding: 0 3%;
+
+            & h4 {
+                margin-left: 0;
+            }
         }
             
 
-        & h4 {
-            margin-left: 0;
-        }
-    }
 }
+
 
 //==========================================================
 //      About Section
@@ -107,43 +116,74 @@
 
 .about-section {
     @include background('../images/orange_triangle_background.svg', cover, center, no-repeat);
+    
     &  img {
-    width: 50px;
-    height: 50px;
+        width: 10vw;
+        height: 10vw;
     }
-    & .category-menu {
-        @include flex(flex, row, nowrap, space-around, center);
 
-        & .skill-category {
-            @include flex(flex, column, nowrap, space-around, center);
-
-        }
-    }
     & h4 {
         font-size: 1.3em;
         text-align: center;
+        @include mq(tablet) {
+            font-size: 2em;
+        }
     }
 }
 
+.category-menu {
+    @include flex(flex, row, nowrap, space-between, flex-start);
+    margin-top: 2vh;  
+}
+
+.skill-category {
+    @include flex(inline-flex, column, nowrap, space-around, center);
+    width: 33%;
+    margin: 0 2vw;
+    & img {
+        border-radius: 50%;
+        background-color: $color-secondary;
+        width: 20vw;
+        height: 20vw;
+    }
+    & h4 {
+        font-size: 1em;
+    }
+}
+
+.category-description {
+    width: 95%;
+    margin: 0 auto;
+}
+
 .skills-list {
-    @include flex(flex, column, nowrap, space-around, center);
-    margin-top: 20px;
-    padding-left: 20px;
+    @include flex(flex, column, nowrap, space-around, space-between);
+    margin: 2vh 5vw;
+
     & li {
         display: flex;
-        margin-bottom: 20px;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2vh;
         & p {
             flex-basis: 33%;
             margin-right: 10px;
+            @include mq(tablet) {
+            font-size: 1.2em;
+            font-weight: 600;
+            }
         }
         & span {
             background-color: $color-secondary;
-            width: 200px;
-            text-align: end;
-            padding: 5px 10px;
+            width: 50vw;
+            padding: 1vw 3vw;
             color: $color-font--alt;
             border-radius: 20px;
         }
+    }
+
+    @include mq(tablet) {
+        margin: 10vh 10vw;
     }
 }
 
@@ -156,51 +196,77 @@
     & h3 {
         text-align: center;
         font-weight: 100;
+        @include mq(tablet) {
+            font-size: 2em;
+            float: left;
+            margin: 25px 10px 10px 20px;
+        }
     }
     & ul {
         @include flex(flex, row, nowrap, space-between, center);
         margin-top: 20px;
         margin-bottom: 10px;
-        & li img {
-            height: 40px;
-            width: 40px;
+        & li {
+            border-bottom: solid 4px transparent;
         }
+        
+        & li:hover {
+            bottom: 4px;
+            border-bottom: solid 4px $color-accent;
+        }
+        & li img {
+            height: 7vw;
+            width: 7vw;
+            min-height: 40px;
+        }
+
     }
 
 }
 
 .portfolio-wrapper {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
+    @include flex(flex, row, wrap, center, center);
     border-top: dashed 2px black;
-    padding-top: 10px;
+    padding-top: 2vh;
+    @include mq(tablet) {
+        border: solid 1px black;
+        width: 97%;
+        background-color: $color-secondary;
+        height: 100%;
+        padding: 3vh 10vw;
+        align-items: flex-start;
+        color: $color-font--alt;
+    }
+
     & h4 {
         flex-basis: 100%;
         font-size: 1.5em;
         text-align: center;
+        @include mq(tablet) {
+            font-size: 1.8em;
+            order: 2;
+            color: $color-primary;
+            text-decoration: underline;
+        }
     }
+
     & span {
-        flex-basis: 15%;
+        flex-basis: 10%;
         font-size: 2em;
         text-align: center;
+        @include mq(tablet) {
+            display: none;
+        }
     }
-    & .project-container {
-        flex-basis: 70%;
-        background-color: $color-accent;
-        height: 25vh;
-        padding: 10px;
-        & img {
-            border-radius: 0;
-            margin: 0;
-            width: 100%;
-        }    
-    }
+
     & ul {
         flex-basis: 100%;
         display: flex;
         justify-content: space-around;
-        margin: 10px 100px;
+        margin: 2vh 30vw;
+        @include mq(tablet) {
+            display: none;
+        }
         & li {
             background-color: $color-primary;
             border-radius: 50%;
@@ -208,6 +274,36 @@
             height: 10px;
         }
     }
+}
+
+.project-img-container {
+        flex-basis: 79%;
+        background-color: $color-accent;
+        height: 25vh;
+        padding: 10px;
+        @include mq(tablet) {
+            order: 1;
+            flex-basis: 100%;
+        }
+        & img {
+            border-radius: 0;
+            margin: 0;
+            width: 100%;
+        }
+}
+
+.project-info-container {
+
+    @include mq(tablet) {
+        order: 3;
+    }
+
+    & p {
+        @include mq(tablet) {
+        font-size: 1em;
+        }
+    }
+
     & a {
         background-color: $color-primary;
         color: $white;
@@ -217,8 +313,79 @@
         padding: 5px 20px;
         margin: 10px auto;
         font-size: 0.7em;
+        @include mq(tablet) {
+            font-size: 0.8em;
+            flex-basis: 28%;
+        }
     }
 }
+
+.languages-description {
+    display: none;
+    @include mq(tablet) {
+        display: block;
+    }
+}
+
+.book-cover {
+    @include mq(tablet){
+        background-color: $color-primary;
+        width: 90vw;
+        height: 70vh;
+        margin-top: 2vh;
+        padding: 3px 15px 2px 4px;
+        margin-left: 20px;
+        border: solid 2px black;
+        -webkit-box-shadow: 5px 5px 15px -3px rgba(0,0,0,0.5); 
+        box-shadow: 5px 5px 15px -3px rgba(0,0,0,0.5);
+    }
+
+}
+
+.book-container {
+    @include mq(tablet){
+        background-color: #607782;
+        height: 100%;
+        border: solid 1px black;
+        padding: 2px 0;
+    }
+}
+
+
+.page-flag {
+    position: absolute;
+    left: 92.7%;
+    width: 0;
+    height: 0;
+    border-top: solid 10px $color-font--alt;
+    border-right: solid 10px transparent;
+    border-bottom: solid 10px $color-font--alt;
+    border-left: solid 24px $color-font--alt;
+
+    &:nth-of-type(1) {
+        top: 25%;
+        left: 88%;
+        border-top: solid 10px $color-accent;
+        border-right: solid 10px transparent;
+        border-bottom: solid 10px $color-accent;
+        border-left: solid 60px $color-accent;
+        z-index: 2;
+    }
+
+    &:nth-of-type(2) {
+        top: 30%;
+    }
+
+    &:nth-of-type(3) {
+        top: 35%;
+    }
+
+    &:nth-of-type(4) {
+        top: 40%;
+    }
+}
+
+
 
 //==========================================================
 //      Resume Section
@@ -298,20 +465,24 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    height: 90%;
-    padding: 20px;
+    height: 80vh;
+    padding: 8vw;
         & li {
             color: $color-font--alt;
             font-size: 1.7em;
             flex-basis: 100%;
             display: flex;
             align-items: center;
+            @include mq(tablet) {
+                text-align: center;
+                font-size: 2em;
+            }
             & p {
                 flex-basis: 50%;
             }
             & svg {
-                width: 50px;
-                height: 50px;
+                width: 10vw;
+                height: 10vw;
                 flex-basis: 50%;
                 & path:nth-of-type(1) {
                     fill: $color-accent;

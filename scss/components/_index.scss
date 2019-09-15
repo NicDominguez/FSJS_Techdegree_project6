@@ -4,8 +4,7 @@
 //      Import of Components Partials
 //==========================================================
 
-// import the grid component
-@import 'layout';
+
 
 // NOTE: import other components here:
 
@@ -13,3 +12,6 @@
 @import 'images';
 @import 'header';
 
+
+// import the layout component
+@import 'layout';
