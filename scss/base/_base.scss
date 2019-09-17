@@ -18,7 +18,7 @@ body {
 
 main {
     height: 100vh;
-    overflow: scroll;
+    overflow-y: scroll;
     scroll-snap-type: y mandatory;
 
 }
@@ -26,7 +26,10 @@ section {
     height: 100vh;
     display: block;
     scroll-snap-align: start;
-    padding: calc(5% + 50px) 5% 5% 5%;
+    padding: calc(3% + 50px) 5% 5% 5%;
+    @include mq(desktop) {
+        padding-bottom: 10%;
+    }
 }
 
 .landing {
@@ -48,4 +51,5 @@ p {
 a {
     text-decoration: none;
 }
+
 
