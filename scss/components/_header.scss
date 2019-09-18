@@ -1,18 +1,80 @@
 /* Import of _navigation.scss */
 
 header {
+    @include flex(flex, row, wrap, space-between, flex-start);
     position: fixed;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     background-color: $color-primary;
-    height: 50px;
     width: 100%;
-    z-index: 3;
+    height: 50px;
+    z-index: 10;
     padding: 10px;
     color: $color-font--alt;
+    overflow: hidden;
+    transition: height .3s ease-out;
+
+    & svg {
+        fill: white;
+        @include mq(desktop) {
+            display: none;
+        }
+    }
 }
 
-nav svg:last-child {
-    fill: white;
+nav {
+    display: none;
+    width: 100%;
+    margin-top: 3vh;
+    @include mq(desktop) {
+        display: inline-block;
+        flex-basis: 50%;
+        margin: 0;
+    }
+    & ul {
+        @include flex(flex, row, wrap, space-evenly, flex-start);
+
+        & li {
+            flex-basis: 100%;
+            margin:  1vh 10vw;
+            text-indent: 10px;
+            border-bottom: solid 2px $color-accent;
+            cursor: pointer;
+            border-radius: 5px;
+            @include mq(tablet) {
+                text-indent: 0;
+                text-align: center;
+                font-size: 1.5em;
+                border-bottom: solid 3px $color-accent;
+            }
+            @include mq(desktop) {
+                flex-basis: auto;
+                margin: 0;
+                border-bottom: none;
+            }
+            & a {
+                display: block;
+                text-decoration: none;
+                color: $color-font--alt;
+                font-size: 1.4em;
+                width: 100%;
+                padding: 0 1vw;
+                @include mq(desktop) {
+                    font-size: 1.1em;
+                }
+            }
+            &:hover {
+                background-color: lighten($color: $color-primary, $amount: 20%);
+            }
+        }
+
+    }
+}
+
+.expanded-header {
+    height: 50%;
+    transition: height .3s ease-out;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    @include mq(tablet) {
+        height: 40%;
+    }
 }

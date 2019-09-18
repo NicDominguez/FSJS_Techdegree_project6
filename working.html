@@ -12,18 +12,25 @@
 <body>
 
     <header>
-        <h1>Section Title</h1>
+        <h1 id="header-section-title">Section Title</h1>
+        <svg id="nav-menu-btn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+        </svg>
         <nav>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <path d="M0 0h24v24H0z" fill="none" />
-                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
-            </svg>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
         <h1 class="section-title">Home</h1>
-        <section class="home-section">
+        <section class="home-section" id="home">
             <img class="desktop-img" src="images/IMG_1576.JPG">
             <div class="values-container">
                 <div class="blur"></div>
@@ -76,7 +83,7 @@
         </section>
 
         <h1 class="section-title">About</h1>
-        <section class="about-section">
+        <section class="about-section" id="about">
             <div class="category-menu">
                 <div class="skill-category">
                     <img>
@@ -124,7 +131,7 @@
         </section>
 
         <h1 class="section-title">Portfolio</h1>
-        <section class="portfolio-section">
+        <section class="portfolio-section" id="portfolio">
             <h3>Languages</h3>
             <ul class="language-list">
                 <li class="icon"><img src="icons/select_all.svg"></li>
@@ -176,7 +183,7 @@
         </section>
 
         <h1 class="section-title">Resume</h1>
-        <section class="resume-section">
+        <section class="resume-section" id="resume">
             <h3>Life Timeline</h3>
             <div class="timeline-container">
                 <ul class="yearlist-container">
@@ -199,7 +206,7 @@
         </section>
 
         <h1 class="section-title">Contact</h1>
-        <section class="contact-section">
+        <section class="contact-section" id="contact">
             <ul>
                 <li>
                     <p>Email</p>
@@ -238,7 +245,9 @@
     <footer>
         <p>Copyright &copy; nicdominguez.com - All rights reserved</p>
     </footer>
-
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

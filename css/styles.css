@@ -363,6 +363,7 @@ body {
 main {
   height: 100vh;
   overflow-y: scroll;
+  scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
 }
 
@@ -405,7 +406,7 @@ header h1 {
   font-style: italic;
   text-shadow: 7px 7px 7px rgba(0, 0, 0, 0.55);
 }
-header nav {
+header .nav-links {
   text-shadow: 7px 7px 7px rgba(0, 0, 0, 0.55);
 }
 
@@ -449,20 +450,99 @@ img {
 
 /* Import of _navigation.scss */
 header {
-  position: fixed;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  position: fixed;
   background-color: #17384B;
-  height: 50px;
   width: 100%;
-  z-index: 3;
+  height: 50px;
+  z-index: 10;
   padding: 10px;
   color: #FDFFFB;
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+}
+header svg {
+  fill: white;
+}
+@media (min-width: 1200px) {
+  header svg {
+    display: none;
+  }
 }
 
-nav svg:last-child {
-  fill: white;
+nav {
+  display: none;
+  width: 100%;
+  margin-top: 3vh;
+}
+@media (min-width: 1200px) {
+  nav {
+    display: inline-block;
+    flex-basis: 50%;
+    margin: 0;
+  }
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+nav ul li {
+  flex-basis: 100%;
+  margin: 1vh 10vw;
+  text-indent: 10px;
+  border-bottom: solid 2px #E48200;
+  cursor: pointer;
+  border-radius: 5px;
+}
+@media (min-width: 767px) {
+  nav ul li {
+    text-indent: 0;
+    text-align: center;
+    font-size: 1.5em;
+    border-bottom: solid 3px #E48200;
+  }
+}
+@media (min-width: 1200px) {
+  nav ul li {
+    flex-basis: auto;
+    margin: 0;
+    border-bottom: none;
+  }
+}
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  color: #FDFFFB;
+  font-size: 1.4em;
+  width: 100%;
+  padding: 0 1vw;
+}
+@media (min-width: 1200px) {
+  nav ul li a {
+    font-size: 1.1em;
+  }
+}
+nav ul li:hover {
+  background-color: #2f7299;
+}
+
+.expanded-header {
+  height: 50%;
+  transition: height 0.3s ease-out;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+@media (min-width: 767px) {
+  .expanded-header {
+    height: 40%;
+  }
 }
 
 /* Import of layout.scss */
