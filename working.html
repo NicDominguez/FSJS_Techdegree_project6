@@ -85,47 +85,51 @@
         <h1 class="section-title">About</h1>
         <section class="about-section" id="about">
             <div class="category-menu">
-                <div class="skill-category">
+                <div class="skill-category" id="program-management-category">
                     <img>
                     <h4>Program Management</h4>
                 </div>
-                <div class="skill-category">
+                <div class="skill-category" id="web-development-category">
                     <img>
                     <h4>Web Development</h4>
                 </div>
-                <div class="skill-category">
+                <div class="skill-category" id="hobbies-category">
                     <img>
                     <h4>Hobbies</h4>
                 </div>
             </div>
-            <div class="category-description">
-                <p>Ut aliquet nisi vitae risus semper malesuada. Phasellus eleifend vehicula nunc, ullamcorper ultricies dolor
-                    dapibus vitae. Integer tempus orci sed fermentum facilisis. </p>
+            <div class="category-description" id="category-description">
+                <p>My experience in program management comes primarily from my work with San Francisco Municipal Transportation Agency. I
+                worked for the Human Resources team for eight years in regulatory compliance. Sounds invigorating, right? Yea not
+                really, but the experience did grant me valuable insight into the inner workings of the public sector and how programs
+                are interwoven throughout the broader goals of a municipal agency. I learned many valuable skills from contracting to
+                database management and I developed a desire to address many of the problems I have witnessed throughout my early
+                career. Below I have listed several of the main skills I developed and how proficient I am at each.</p>
             </div>
             <div class="skills-list-wrapper"> 
-                <ul class="skills-list">
-                    <li><p>Skill Name</p><span>&#37;</span></li>
-                    <li><p>Skill Name</p><span>&#37;</span></li>
-                    <li><p>Skill Name Name</p><span>&#37;</span></li>
-                    <li><p>Skill Name</p><span>&#37;</span></li>       
-                    <li><p>Skill Name</p><span>&#37;</span></li>
-                    <li><p>Skill Name</p><span>&#37;</span></li>
+                <ul class="skills-list" id="program-management-skill-list">
+                    <li><p>Contracting</p><span>&#37;</span></li>
+                    <li><p>Leadership</p><span>&#37;</span></li>
+                    <li><p>Data Management</p><span>&#37;</span></li>
+                    <li><p>Communication</p><span>&#37;</span></li>       
+                    <li><p>Project Management</p><span>&#37;</span></li>
+                    <li><p>Organizational Development</p><span>&#37;</span></li>
                 </ul>
-                <ul class="skills-list2">
-                    <li><p>Skill Name</p><span>&#37;</span></li>
-                    <li><p>Skill Name</p><span>&#37;</span></li>
-                    <li><p>Skill Name Name</p><span>&#37;</span></li>
-                    <li><p>Skill Name</p><span>&#37;</span></li>
-                    <li><p>Skill Name</p><span>&#37;</span></li>
-                    <li><p>Skill Name</p><span>&#37;</span></li>
+                <ul class="skills-list2" id="web-development-skill-list">
+                    <li><p>UI Design</p><span>&#37;</span></li>
+                    <li><p>HTML5</p><span>&#37;</span></li>
+                    <li><p>CSS</p><span>&#37;</span></li>
+                    <li><p>SASS</p><span>&#37;</span></li>
+                    <li><p>JavaScript</p><span>&#37;</span></li>
+                    <li><p>Jquery</p><span>&#37;</span></li>  
                 </ul>
-                <ul class="skills-list3">
-                    <li><p>Skill Name</p><span>&#37;</span></li>
-                    <li><p>Skill Name</p><span>&#37;</span></li>
-                    <li><p>Skill Name Name</p><span>&#37;</span></li>
-                    <li><p>Skill Name</p><span>&#37;</span></li>
-                    <li><p>Skill Name</p><span>&#37;</span></li>
-                    <li><p>Skill Name</p><span>&#37;</span></li>
+                <ul class="skills-list3" id="hobbies-skill-list">
+                    <li><p>Board Gaming</p><span>&#37;</span></li>
+                    <li><p>Reading</p><span>&#37;</span></li>
+                    <li><p>MCU Trivia</p><span>&#37;</span></li>
+                    <li><p>Goalkeeping</p><span>&#37;</span></li>
+                    <li><p>Traveling</p><span>&#37;</span></li>
+                    <li><p>Volleyball</p><span>&#37;</span></li>
                 </ul>
             </div>
         </section>
@@ -133,13 +137,13 @@
         <h1 class="section-title">Portfolio</h1>
         <section class="portfolio-section" id="portfolio">
             <h3>Languages</h3>
-            <ul class="language-list">
-                <li class="icon"><img src="icons/select_all.svg"></li>
-                <li class="icon"><img src="icons/html.svg"></li>
-                <li class="icon"><img src="icons/css.svg"></li>
-                <li class="icon"><img src="icons/sass.svg"></li>
-                <li class="icon"><img src="icons/javascript.svg"></li>
-                <li class="icon"><img src="icons/jquery.svg"></li>
+            <ul class="language-list" id="language-list">
+                <li class="language-icon" id="all-languages"><img src="icons/select_all.svg"></li>
+                <li class="language-icon" id="html-language"><img src="icons/html.svg"></li>
+                <li class="language-icon" id="css-language"><img src="icons/css.svg"></li>
+                <li class="language-icon" id="sass-language"><img src="icons/sass.svg"></li>
+                <li class="language-icon" id="javascript-language"><img src="icons/javascript.svg"></li>
+                <li class="language-icon" id="jquery-language"><img src="icons/jquery.svg"></li>
             </ul>
 
             <div class="book-cover">
@@ -150,10 +154,10 @@
                     <div class="page-flag"></div>
                     <div class="page-flag"></div>
                     <div class="portfolio-wrapper">
-                        <h4>Project Title</h4>
+                        <h4 id="project-title">Project Title</h4>
                         <span><</span>
                         <div class="project-img-container">
-                            <img>
+                            <img id="project-image">
                         </div>
                         <span>></span>
                         <ul>
@@ -164,17 +168,18 @@
                             <li class="dot"></li>
                         </ul>
                         <div class ="project-info-container">
-                            <p>Ut aliquet nisi vitae risus semper malesuada. Phasellus eleifend vehicula nunc, ullamcorper ultricies dolor
+                            <p id="project-description">Ut aliquet nisi vitae risus semper malesuada. Phasellus eleifend vehicula nunc, ullamcorper ultricies dolor
                             dapibus vitae. Integer tempus orci sed fermentum facilisis.</p>
-                            <p class="languages-description">
-                                <span>language1</span>Ut aliquet nisi vitae risus semper malesuada. Phasellus eleifend vehicula nunc, ullamcorper ultricies dolor
-                                dapibus vitae. Integer tempus orci sed fermentum facilisis. <br>
-                                <span>language2</span>Ut aliquet nisi vitae risus semper malesuada. Phasellus eleifend vehicula nunc, ullamcorper ultricies dolor
-                                dapibus vitae. Integer tempus orci sed fermentum facilisis. <br>
-                                <span>language3</span>Ut aliquet nisi vitae risus semper malesuada. Phasellus eleifend vehicula nunc, ullamcorper ultricies dolor
-                                dapibus vitae. Integer tempus orci sed fermentum facilisis. </p>
-                            <a>project website</a>
-                            <a>project repository</a>
+                            <div class="languages-description">
+                                <span id="project-language1">language1</span><p id="language1-description">Ut aliquet nisi vitae risus semper malesuada. Phasellus eleifend vehicula nunc, ullamcorper ultricies dolor
+                                dapibus vitae. Integer tempus orci sed fermentum facilisis.</p>
+                                <span id="project-language2">language2</span><p id="language2-description">Ut aliquet nisi vitae risus semper malesuada. Phasellus eleifend vehicula nunc, ullamcorper ultricies dolor
+                                dapibus vitae. Integer tempus orci sed fermentum facilisis.</p>
+                                <span id="project-language3">language3</span><p id="language3-description">Ut aliquet nisi vitae risus semper malesuada. Phasellus eleifend vehicula nunc, ullamcorper ultricies dolor
+                                dapibus vitae. Integer tempus orci sed fermentum facilisis.</p> 
+                            </div>
+                            <a id="project-website">project website</a>
+                            <a id="project-repository">project repository</a>
                         </div>
                     </div>
                 </div>

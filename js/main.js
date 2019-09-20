@@ -109,7 +109,7 @@ $(document).ready(function() {
 
 
 class PortfolioProject {
-    constructor(title, image, website, respository, description, languages_used, language1, language2, language3) {
+    constructor(title, image, website, respository, description, languages_used, language1, language1_description, language2, language2_description, language3, language3_description) {
         this.title = title;
         this.image = image;
         this.website = website;
@@ -117,32 +117,62 @@ class PortfolioProject {
         this.description = description;
         this.languages_used = languages_used;
         this.language1 = language1;
+        this.language1_description = language1_description;
         this.language2 = language2;
+        this.language2_description = language2_description;
         this.language3 = language3;
+        this.language3_description = language3_description;
     }
 }
 
+const project2 = new PortfolioProject(
+    `Responsive Layout`,
+    `images/project2_image.JPG`,
+    `https://nicdominguez.github.io/FEWD_Techdegree_project2`,
+    `https://github.com/NicDominguez/FEWD_Techdegree_project2`,
+    `This is the description for project 2`,
+    [`html-language`, `sass-language`],
+    `HTML`,
+    `Ths is an explanation for the use of HTML`,
+    `CSS`,
+    `This is an explanation for the use of CSS`,
+    `Sass`,
+    `This is an explanation for the use of Sass`
+)
 
+const project3 = new PortfolioProject(
+    `Registration Form`,
+    `images/project2_image.JPG`,
+    `https://nicdominguez.github.io/FEWD_Techdegree_project3`,
+    `https://github.com/NicDominguez/FEWD_Techdegree_project3`,
+    `This is the description for project 3`,
+    [`javascript-language`, `css-language`],
+    `HTML - Ths is an explanation for the use of HTML`,
+    `CSS - This is an explanation for the use of CSS`,
+    null
+)
 
-
-
-
-
-// Click Event to Select Lanaguages and create chosenLanguages array
-
-let chosenLanguages = []
 const languageList = $('#language-list').children()
 
-// Creates array of objects called viewableProjects based on chosenLanguages array
+//==========================================================
+//     Create Array of All Available Project Objects
+//==========================================================
 
-let viewableProjects = []
 let allProjects = []
-
+allProjects.push(project2, project3)
 
 //==========================================================
-//     Mark clicked languages as selected
+//     Create Array of selected Languages
 //==========================================================
 
+let selectedLanguages = []
+let viewableProjects = []
+
+//==========================================================
+//     EVENTS
+//==========================================================
+
+// Mark clicked languages as selected
 $(`.language-icon`).click(function() {
     let languageId = this.id
 
@@ -154,125 +184,103 @@ $(`.language-icon`).click(function() {
             languageList.each(function () {
                 //removes selected class from all LIs
                 $(this).removeClass("selected")
-                //removes all strings from array chosenLanguages    
-                chosenLanguages = []
-                
             })
-
         } else {
             languageList.each(function () {
                 //adds selected class to all LI elements
                 $(this).addClass("selected")
-
-                //push id to chosenLanguages array online if not alreay included
-                if ($.inArray(this.id, chosenLanguages) < 0) {
-                    chosenLanguages.push(this.id)
-                } 
                 
             })
         }
-
     } else {
-        
-        if ($(this).hasClass("selected")) {
-            //gets index of LIs Id in chosenLanugages Array then removes the value(self) at that index
-            let chosenLanguageindex = $.inArray(languageId, chosenLanguages)
-            chosenLanguages.splice(chosenLanguageindex,1)
-
-            // removes proejcts containg deslected language from viewableProjects array
-            viewableProjects.forEach(function(project) {
-                if ($.inArray(languageId, project.languages_used) >= 0) {
-                    let index = $(viewableProjects).index(project)
-                    viewableProjects.splice(index,1)
-                }
-            })
-
-        } else {
-             //pushes the LI Id to the chosenLanguages array
-            chosenLanguages.push(languageId)
-        }
-       
         $(this).toggleClass("selected");
-        
     }
-
+    updateSelectedLanguages()
     updateViewableProjects()
-
 });
 
 //==========================================================
-//     Create Chosen languages Array from selected Elements
+//     MAIN FUNCTIONS
 //==========================================================
 
+// Function to Update Selected languages Array from selected Elements
 
-
-const project2 = new PortfolioProject(
-    `Responsive Layout`,
-    `../images/project2_image.JPG`,
-    `https://nicdominguez.github.io/FEWD_Techdegree_project2`,
-    `https://github.com/NicDominguez/FEWD_Techdegree_project2`,
-    `This is the description for project 2`,
-    [`html-language`, `sass-language`],
-    `HTML - Ths is an explanation for the use of HTML`,
-    `CSS - This is an explanation for the use of CSS`,
-    null
-)
-
-const project3 = new PortfolioProject(
-    `Registration Form`,
-    `../images/project2_image.JPG`,
-    `https://nicdominguez.github.io/FEWD_Techdegree_project3`,
-    `https://github.com/NicDominguez/FEWD_Techdegree_project3`,
-    `This is the description for project 3`,
-    [`javascript-language`, `css-language`],
-    `HTML - Ths is an explanation for the use of HTML`,
-    `CSS - This is an explanation for the use of CSS`,
-    null
-)
-
-//creates allProjects array
-allProjects.push(project2, project3)
-
-//creates array of all project titles
-const allProjectTitles = []
-allProjects.forEach(project => { allProjectTitles.push(project.title) });
-
-const allChosenProjectTitles = []
-
-
-//==========================================================
-//     Create Viewale Projects Array from Chosen Languages Array
-//==========================================================
-
-
-//checks if project has any of the languages_used values in the array chosen
-function checkProjectIncludesLanguage(project, array) {
-    let found = false;
-    project.languages_used.forEach(function(language) {
-
-        if ($.inArray(language, array) >= 0) {
-            found = true;
-        } 
+function updateSelectedLanguages() {
+    selectedLanguages = []
+    $(`.language-icon`).each(function () {
+        if ($(this).hasClass('selected')) {
+            selectedLanguages.push(this.id)
+        }
     })
-    return found;
 }
 
+// Function to Create Viewable Projects Array by Selected Languages Array
 function updateViewableProjects() {
-
+    viewableProjects = []
     allProjects.forEach(function(project) {
-        
-        if (checkProjectIncludesLanguage(project, chosenLanguages)) {
-                //add projects to viewableProjects array only if not already included
-                if ($.inArray(project.title, allChosenProjectTitles) < 0) {
-                    allChosenProjectTitles.push(project.title)
-                    viewableProjects.push(project)
-                }
+        if (checkProjectIncludesLanguage(project, selectedLanguages)) {
+            viewableProjects.push(project)
         }
     })
     console.log(viewableProjects)
 }
 
-function createChosenLanguages() {
+//==========================================================
+//     SUPPORT FUNCTIONS
+//==========================================================
+
+// Function to Check if a Project includes any of the selected languages
+function checkProjectIncludesLanguage(project, array) {
+    let found = false;
+    project.languages_used.forEach(function (language) {
+        if ($.inArray(language, array) >= 0) {
+            found = true;
+        }
+    })
+    return found;
+}
 
 
+/* class PortfolioProject {
+    constructor(title, image, website, respository, description, languages_used, language1, language1_description, language2, language2_description, language3, language3_description) {
+        this.title = title;
+        this.image = image;
+        this.website = website;
+        this.repository = respository;
+        this.description = description;
+        this.languages_used = languages_used;
+        this.language1 = language1;
+        this.language1_description = language1_description;
+        this.language2 = language2;
+        this.language2_description = language2_description;
+        this.language3 = language3;
+        this.language3_description = language3_description;
+    }
+} */
+
+const projectTitle = $(`#project-title`);
+const projectImage = $(`#project-image`);
+const projectWebsite = $(`#project-website`);
+const projectRepository = $(`#project-repository`);
+const projectDescription = $(`#project-description`);
+const projectLanguage1 = $(`#project-language1`);
+const projectLanguage1Description = $(`#language1-description`);
+const projectLanguage2 = $(`#project-language2`);
+const projectLanguage2Description = $(`#language2-description`);
+const projectLanguage3 = $(`#project-language3`);
+const projectLanguage3Description = $(`#language3-description`);
+
+
+function updateProjectView() {
+    projectTitle.text(project2.title)
+    projectImage.attr(`src`, project2.image)
+    projectWebsite.attr(`href`, project2.website)
+    projectRepository.attr(`href`, project2.repository)
+    projectDescription.text(project2.description)
+    projectLanguage1.text(project2.language1)
+    projectLanguage1Description.text(project2.language1_description)
+    projectLanguage2.text(project2.language2)
+    projectLanguage2Description.text(project2.language2_description)
+    projectLanguage3.text(project2.language3)
+    projectLanguage3Description.text(project2.language3_description)
 }

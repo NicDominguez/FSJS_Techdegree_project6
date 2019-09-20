@@ -217,6 +217,9 @@
     @include flex(inline-flex, column, nowrap, space-around, center);
     width: 33%;
     margin: 0 2vw;
+    &:hover {
+        transform: scale(1.1);
+    }
     & img {
         border-radius: 50%;
         background-color: $color-secondary;
@@ -227,15 +230,24 @@
     }
     & h4 {
         font-size: 1em;
+        margin: 5% 0;
     }
 }
 
 .category-description {
     width: 95%;
-    margin: 2% auto;
+    margin: 1% auto;
+    font-size: 0.9em;
+    height: 20vh;
+    overflow: scroll;
+    @include mq(tablet) {
+        width: 85%;
+        font-size: 1.1em;
+    }
     @include mq(desktop) {
-        width: 70%;
-        font-size: 1.2em;
+        width: 75%;
+        font-size: 1.1em;
+        overflow: hidden;
 
     }
 }
@@ -250,7 +262,7 @@
     @include flex(inline-flex, column, nowrap, space-around, flex-start);
     margin: 2vh 5vw;
     @include mq(tablet) {
-        margin: 10vh 10vw;
+        margin: 3vh 10vw;
     }
     @include mq(desktop) {
         flex-basis: 33%;
@@ -262,12 +274,14 @@
         justify-content: space-between;
         align-items: center;
         margin-bottom: 1vh;
+        width: 100%;
         @include mq(desktop) {
             margin-bottom: 1vh;
         }
         & p {
             flex-basis: 33%;
             margin-right: 10px;
+            font-size: 0.9em;
             @include mq(tablet) {
                 font-size: 1.2em;
                 font-weight: 600;
@@ -320,8 +334,9 @@
 
 .language-list {
     @include flex(flex, row, nowrap, space-around, center);
-    margin: 0px 0px 10px 20px;
+    margin: 1vh 0px 10px 0px;
     & li {
+        margin: 0 2px;
         border-bottom: solid 4px transparent;
     }
     
@@ -330,11 +345,14 @@
         border-bottom: solid 4px $color-accent;
     }
     & li img {
-        height: 7vw;
-        width: 7vw;
+        height: 4vw;
+        width: 4vw;
         max-height: 60px;
         max-width: 60px;
         min-height: 40px;
+    }
+    & .selected {
+        border-bottom: solid 4px $color-accent;
     }
 }
 
