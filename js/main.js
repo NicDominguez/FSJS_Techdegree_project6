@@ -8,13 +8,12 @@ $(document).ready(function() {
     //change header section title when scrolling
     $('main').scroll(function (event) {
         // y = top position of window
-
-        const y_pos = $(this).scrollTop() - 500;
+        const y_pos = $(window).scrollTop();
         const header_title = $('#header-section-title');
+
         
         $('section').each(function() {
             let section_pos = $(this).position().top
-            
 
             if ((y_pos) >= section_pos) {
                 /* console.log('change triggered at' + y_pos) */
@@ -69,11 +68,11 @@ $(document).ready(function() {
     }
 
     const wdSkillList = {
-        uidesign: 40,
+        uidesign: 50,
         html: 80,
         css: 70,
         sass: 60,
-        javascript: 50,
+        javascript: 40,
         jquery: 50
     }
 
@@ -86,9 +85,21 @@ $(document).ready(function() {
         volleyball: 50
     }
 
-    //Set Program Management Skill List on Page Load
-    displayPercentages(pmList, pmSkillList)
-    setSkillBarWidths(pmList, pmSkillList)
+     //Set Program Management Skill List on Page Load if Mobile and Tablet
+    if ($(window).width() < 1200) {
+        displayPercentages(pmList, pmSkillList)
+        setSkillBarWidths(pmList, pmSkillList)
+    }
+
+    //Set all Skill Lists on Page Load if Desktop
+    if ($(window).width() >= 1200) {
+        displayPercentages(pmList, pmSkillList)
+        setSkillBarWidths(pmList, pmSkillList)
+        displayPercentages(wdList, wdSkillList)
+        setSkillBarWidths(wdList, wdSkillList)
+        displayPercentages(hobList, hobSkillList)
+        setSkillBarWidths(hobList, hobSkillList)
+    }
 
     //Click Events for Each Skill Category
     pmCategory.click(function () {
@@ -100,12 +111,12 @@ $(document).ready(function() {
             catDescription.text(`
                 My experience in program management comes primarily from my work with San Francisco Municipal Transportation Agency. I worked for the Human Resources team for eight years in regulatory compliance. Sounds invigorating, right? Yea not really, but  the experience did grant me valuable insight into the inner workings of the public sector and how programs are interwoven throughout the broader goals of a municipal agency. I learned many valuable skills from contracting to database management and I developed a desire to address many of the problems I have witnessed throughout my early career. Below I have listed several of the main skills I developed and how proficient I am at each.
             `)
-        }
 
-        displayPercentages(pmList, pmSkillList)
-        setSkillBarWidths(pmList, pmSkillList)
-        setSkillBarWidthstoZero(wdList, wdSkillList)
-        setSkillBarWidthstoZero(hobList, hobSkillList)
+            displayPercentages(pmList, pmSkillList)
+            setSkillBarWidths(pmList, pmSkillList)
+            setSkillBarWidthstoZero(wdList, wdSkillList)
+            setSkillBarWidthstoZero(hobList, hobSkillList)
+        }
     });
 
     wdCategory.click(function () {
@@ -117,11 +128,12 @@ $(document).ready(function() {
             catDescription.text(`
             After working in the first ten years of my career in the private and public sector one thing I was always bothered by was that I knew my job could be easier. The small but numerous tasks that would take up a good part of my day could and in my view should be done by a machine. I was right on the cusp of understanding that automating my work was possible but I didn’t yet have the skills to do it. Now I am building those skills and starting in front end web development.  
             `)
+
+            displayPercentages(wdList, wdSkillList)
+            setSkillBarWidths(wdList, wdSkillList)
+            setSkillBarWidthstoZero(pmList, pmSkillList)
+            setSkillBarWidthstoZero(hobList, hobSkillList)
         }
-        displayPercentages(wdList, wdSkillList)
-        setSkillBarWidths(wdList, wdSkillList)
-        setSkillBarWidthstoZero(pmList, pmSkillList)
-        setSkillBarWidthstoZero(hobList, hobSkillList)
     });
 
     hobCategory.click(function () {
@@ -133,11 +145,12 @@ $(document).ready(function() {
             catDescription.text(`
             Life isn’t only about work so I try and round out my life with a variety of activities. I am a bit of a nerd when it comes to pop culture so I could go pretty deep into a character study of Darth Vader if you wanted me to. But anyway, I have been pretty active most of my life in both outdoor and more low key activities. Volleyball and Soccer were big parts of my life and I still try and play as much as possible. More recently, I have been reading more science fiction and graphic novels to keep my mind active. One important hobby to me is traveling . I am a firm believer that people grow by getting out and experiencing the world and other cultures. I am proud to have visited/lived in over 20 countries with another coming up next year.
             `)
+
+            displayPercentages(hobList, hobSkillList)
+            setSkillBarWidths(hobList, hobSkillList)
+            setSkillBarWidthstoZero(pmList, pmSkillList)
+            setSkillBarWidthstoZero(wdList, wdSkillList)
         }
-        displayPercentages(hobList, hobSkillList)
-        setSkillBarWidths(hobList, hobSkillList)
-        setSkillBarWidthstoZero(pmList, pmSkillList)
-        setSkillBarWidthstoZero(wdList, wdSkillList)
     });
 
 
@@ -448,6 +461,7 @@ $(document).ready(function() {
     function updateProjectView(project) {
         projectTitle.text(project.title)
         projectImage.attr(`src`, project.image)
+        projectImage.parent().attr(`href`, project.website)
         projectWebsite.attr(`href`, project.website)
         projectRepository.attr(`href`, project.repository)
         projectDescription.text(project.description)
@@ -526,7 +540,7 @@ $(document).ready(function() {
 2010 - I met my wife who in a stroke of luck happened to work in the restaurant below my first apartment in Berkeley. We began dating and have spent the time since building a beautiful little life together.
 2010 - I worked for about a year and a half with Bay Area Arts Marketing for the Berkeley Repertory Theatre doing subscription sales and office management.
 `,
-        title2011: `Career Beginnings`,
+        title2011: `Career Begins`,
         desc2011: `2011 - I began work as a Management Assistant at the San Francisco Municipal Transportation Agency. I worked in the Substance Abuse Program learning many facets of regulatory compliance and program management.<br>
 2012 - My wife and I adopted the most chill and perfect cat ever, Tom Tom.<br>
 2013 - I joined the local non-profit Livable Berkeley, a group advocating for housing and smart city planning policies.
@@ -544,6 +558,14 @@ $(document).ready(function() {
     }
 
     //==========================================================
+    //     On Page Load Display
+    //==========================================================
+
+    $(`#yearlist-container li:first-child`).addClass(`active`)
+    resumeTitle.text(resumeContainerContents.title1985)
+    resumeDescription.html(resumeContainerContents.desc1985)
+
+    //==========================================================
     //     Events
     //==========================================================
 
@@ -552,6 +574,8 @@ $(document).ready(function() {
         let title = resumeContainerContents[`title` + year]
         let description = resumeContainerContents[`desc` + year]
 
+        yearlistContainer.children().each(function() {$(this).removeClass(`active`)})
+        $(this).addClass(`active`)
         resumeTitle.text(title)
         resumeDescription.html(description)
     })

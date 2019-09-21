@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100"
+   height="100"
+   viewBox="0 0 26.458333 26.458334"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="logo_svg.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.6"
+     inkscape:cx="43.011459"
+     inkscape:cy="46.152339"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Circle"
+     sodipodi:insensitive="true">
+    <ellipse
+       transform="translate(0,-270.54164)"
+       style="opacity:1;fill:#fdfffb;fill-opacity:1;stroke:#839595;stroke-width:0.53224415;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path859-5"
+       cx="13.214993"
+       cy="283.7944"
+       rx="12.845644"
+       ry="12.89289" />
+  </g>
+  <g
+     inkscape:label="Initials"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-270.54165)">
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.65572453px;line-height:125%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#17384b;fill-opacity:1;stroke:none;stroke-width:0.57919937px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="3.9214811"
+       y="282.3511"
+       id="text833"
+       transform="scale(0.99212618,1.0079363)"><tspan
+         sodipodi:role="line"
+         id="tspan831"
+         x="3.9214811"
+         y="282.3511"
+         style="fill:#17384b;fill-opacity:1;stroke-width:0.57919937px">N</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.65572453px;line-height:125%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#17384b;fill-opacity:1;stroke:none;stroke-width:0.57919937px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="15.209782"
+       y="287.92133"
+       id="text837"
+       transform="scale(0.99212618,1.0079363)"><tspan
+         sodipodi:role="line"
+         id="tspan835"
+         x="15.209782"
+         y="287.92133"
+         style="fill:#17384b;fill-opacity:1;stroke-width:0.57919937px">D</tspan></text>
+    <path
+       style="opacity:1;fill:#ffa103;fill-opacity:1;fill-rule:evenodd;stroke:#e48200;stroke-width:0.95665771px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 15.703645,275.2353 -5.132146,16.94553"
+       id="path839"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

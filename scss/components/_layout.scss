@@ -19,7 +19,7 @@
         width: 30vw;
         height: 40vw;
         float: left;
-        margin-right: 2vw;
+
     }
 }
 
@@ -36,6 +36,7 @@
     @include mq(tablet) {
         flex-direction: column;
         justify-content: space-around;
+        overflow-x: hidden;
     }
 
     @include mq(landscape) {
@@ -96,7 +97,7 @@
     scroll-snap-align: start;
     padding: 10% 4% 3% 2%;
     height: 87vh;
-    font-size: 0.8em;
+    font-size: 1em;
     min-width: 95vw;
     z-index: 2;
     @include mq(tablet) {
@@ -135,7 +136,8 @@
 
     & h4 {
         text-align: center;
-        margin-top: 5%;
+        line-height: 28px;
+        margin: 5%;
     }
 }
 
@@ -170,7 +172,7 @@
     @include mq(desktop) {
         display: block;
         height: 20vh;
-        padding: 0 7% 0 47%;
+        padding: 0 7% 0 42%;
         margin-bottom: 8vh;
     }
 }
@@ -218,7 +220,7 @@
 .category-menu {
     @include flex(flex, row, nowrap, space-between, flex-start);
     margin-top: 2vh;
-    @include mq(desktop) {
+    @include mq(tablet) {
         margin-top: 0;
     }  
 }
@@ -226,10 +228,7 @@
 .skill-category {
     @include flex(inline-flex, column, nowrap, space-around, center);
     width: 33%;
-    margin: 0 2vw;
-    &:hover {
-        transform: scale(1.1);
-    }
+    margin: 0 1%;
     & img {
         border-radius: 50%;
         background-color: $color-secondary;
@@ -241,21 +240,27 @@
     & h4 {
         font-size: 1em;
         margin: 5% 0;
+        @include mq(tablet) {
+            font-size: 1.2em;
+        }
     }
+
+
 }
 
 .category-description {
     width: 95%;
-    margin: 1% auto;
-    font-size: 0.9em;
-    height: 15vh;
+    margin: 2% auto;
+    font-size: 0.8em;
+    height: 23vh;
     overflow: scroll;
     @include mq(tablet) {
-        width: 85%;
+        width: 82%;
         font-size: 1.1em;
     }
     @include mq(desktop) {
         width: 75%;
+        height: 16vh;
         font-size: 1.1em;
         overflow: hidden;
 
@@ -263,9 +268,9 @@
 }
 
 .skills-list-wrapper {
-    
     @include mq(desktop) {
-        @include flex(flex, row, nowrap, space-around, flex-start);
+        @include flex(flex, row, nowrap, center, center);
+
     }
 }
 
@@ -278,8 +283,8 @@
         margin: 3vh 10vw;
     }
     @include mq(desktop) {
-        flex-basis: 33%;
-        margin: 1% 2%;
+        width: 33%;
+        margin: 1% 1%;
     }
 
     & li {
@@ -299,6 +304,7 @@
                 font-size: 1.2em;
                 font-weight: 600;
             }
+
         }
         & span {
             background-color: $color-secondary;
@@ -310,6 +316,7 @@
             transition: width 0.5s ease-in;
             @include mq(desktop) {
                 width: 18vw;
+                margin-left: 40%;
             }
         }
     }
@@ -319,7 +326,10 @@
 .skills-list3 {
     display: none;
     @include mq(desktop) {
-        @include flex(inline-flex, column, nowrap, space-around, flex-start);
+        @include flex(inline-flex, row, wrap, flex-start, flex-start);
+        border-left: dashed 1px $color-primary;
+        padding-left: 1%;
+        margin-left: 0;
     }
 }
 
@@ -604,9 +614,6 @@
     }
 }
 
-
-
-
 .page-flag {
     @include mq(tablet) {
         position: absolute;
@@ -716,6 +723,9 @@
             font-size: 1.2em;
             margin: 7% 0;
         }
+        &.active {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -725,22 +735,22 @@
 }
 
 .description-container {
+    @include flex(flex, column, nowrap, flex-start, flex-start);
     height: 100%;
     width: 100%;
-    padding: 5% 2% 20% 5%;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
+    padding: 10% 5% 20% 5%;
     line-height: 1em;
+    overflow-y: scroll;
     & h4 {
         font-size: 1.4em;
         color: $color-font--alt;
         margin-bottom: 2vh;
         @include mq(tablet) {
-            font-size: 1.8em;
+            margin-bottom: 5vh;
+            font-size: 2.2em;
         }
         @include mq(desktop) {
-            font-size: 2.4em;
+            font-size: 2.5em;
         }
     }
     & p {
@@ -748,13 +758,19 @@
         line-height: 16px;
         color: $color-primary;
         @include mq(tablet) {
-            font-size: 1em;
+            font-size: 1.2em;
+            line-height: 20px;
         }
         @include mq(desktop) {
-            font-size: 1.2em;
+            line-height: 24px;
+            font-size: 1.4em;
         }
         & br {
             margin-bottom: 1vh;
+            @include mq(tablet) {
+                margin-bottom: 3vh;
+            }
+
         }
         
     }
@@ -772,25 +788,22 @@
     }
     
     & ul {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    height: 80vh;
-    padding: 8vw;
-    @include mq(tablet) {
-        padding-left: 0;
-    }
-    @include mq(desktop) {
-        width: 50%;
-        height: 60vh;
-    }
+        @include flex(flex, row, wrap, flex-start, center);
+        height: 80vh;
+        padding: 6vw;
+        @include mq(tablet) {
+            padding-left: 0;
+        }
+        @include mq(desktop) {
+            width: 50%;
+            height: 60vh;
+        }
 
         & li {
+            @include flex(flex, row, nowrap, space-between, center);
+            flex-basis: 90%;
             color: $color-font--alt;
             font-size: 1.7em;
-            flex-basis: 100%;
-            display: flex;
-            align-items: center;
             @include mq(tablet) {
                 text-align: left;
                 font-size: 2em;
