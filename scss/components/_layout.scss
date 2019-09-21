@@ -6,6 +6,7 @@
 
 .home-section {
     @include background('../images/IMG_1139.JPG', cover, center, no-repeat);
+    position: relative;
     @include mq(desktop) {
         background-image: url(../images/background-home-desktop.svg);
     }
@@ -26,11 +27,15 @@
     @include flex(flex, row, nowrap, flex-start, center);
     position: relative;
     overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
     overflow-y: hidden;
     height: 87vh;
+    
 
     @include mq(tablet) {
         flex-direction: column;
+        justify-content: space-around;
     }
 
     @include mq(landscape) {
@@ -71,7 +76,7 @@
     font-size: 4em;
     color: $color-primary;
     z-index: 2;
-    top: 15vw;
+    top: 145vw;
 
     @include mq(tablet) {
         display: none
@@ -79,15 +84,16 @@
 }
 
 .previous-arrow {
-    left: 22%;
+    left: 12%;
 }
 
 .next-arrow {
-    right: 18%;
+    right: 13%;
 }
 
 .values-card {
     @include flex(flex, column, nowrap, flex-start, center);
+    scroll-snap-align: start;
     padding: 10% 4% 3% 2%;
     height: 87vh;
     font-size: 0.8em;
@@ -98,6 +104,7 @@
         flex-wrap: wrap;
         padding: 1% 10%;
         align-items: flex-start;
+        height: auto;
     }
     @include mq(desktop) {
         padding: 0 2%;
@@ -210,7 +217,10 @@
 
 .category-menu {
     @include flex(flex, row, nowrap, space-between, flex-start);
-    margin-top: 2vh;  
+    margin-top: 2vh;
+    @include mq(desktop) {
+        margin-top: 0;
+    }  
 }
 
 .skill-category {
@@ -238,7 +248,7 @@
     width: 95%;
     margin: 1% auto;
     font-size: 0.9em;
-    height: 20vh;
+    height: 15vh;
     overflow: scroll;
     @include mq(tablet) {
         width: 85%;
@@ -253,25 +263,28 @@
 }
 
 .skills-list-wrapper {
-    @include flex(flex, row, nowrap, space-around, center);
+    
+    @include mq(desktop) {
+        @include flex(flex, row, nowrap, space-around, flex-start);
+    }
 }
 
 .skills-list,
 .skills-list2,
 .skills-list3 {
-    @include flex(inline-flex, column, nowrap, space-around, flex-start);
-    margin: 2vh 5vw;
+    @include flex(inline-flex, row, wrap, flex-start, flex-start);
+    margin: 2vh;
     @include mq(tablet) {
         margin: 3vh 10vw;
     }
     @include mq(desktop) {
         flex-basis: 33%;
-        margin: 2% 2%;
+        margin: 1% 2%;
     }
 
     & li {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
         margin-bottom: 1vh;
         width: 100%;
@@ -279,7 +292,7 @@
             margin-bottom: 1vh;
         }
         & p {
-            flex-basis: 33%;
+            width: 10%;
             margin-right: 10px;
             font-size: 0.9em;
             @include mq(tablet) {
@@ -289,10 +302,12 @@
         }
         & span {
             background-color: $color-secondary;
-            width: 50vw;
+            width: 15vw;
+            margin-left: 20vw;
             padding: 1vh 3vw;
             color: $color-font--alt;
             border-radius: 20px;
+            transition: width 0.5s ease-in;
             @include mq(desktop) {
                 width: 18vw;
             }
@@ -338,6 +353,7 @@
     & li {
         margin: 0 2px;
         border-bottom: solid 4px transparent;
+        cursor: pointer;
     }
     
     & li:hover {
@@ -392,13 +408,13 @@
 .portfolio-wrapper {
     @include flex(flex, row, wrap, center, center);
     border-top: dashed 2px black;
-    padding-top: 2vh;
+    padding-top: 1vh;
     @include mq(tablet) {
         border: solid 1px black;
         width: 97%;
         background-color: $color-secondary;
         height: 101%;
-        padding: 3vh 10vw;
+        padding: 2vh 10vw;
         justify-content: flex-start;
         align-items: flex-start;
         align-content: flex-start;
@@ -414,7 +430,7 @@
         font-size: 1.5em;
         text-align: center;
         @include mq(tablet) {
-            flex-basis: 40%;
+            flex-basis: 60%;
             align-self: flex-start;
             margin: 5px 0;
             font-size: 1.8em;
@@ -425,7 +441,7 @@
         }
         @include mq(desktop) {
             order: 1;
-            flex-basis: 48%;
+            flex-basis: 46%;
             text-align: center;
         }
     }
@@ -434,6 +450,7 @@
         flex-basis: 10%;
         font-size: 2em;
         text-align: center;
+        cursor: pointer;
         @include mq(tablet) {
             display: none;
         }
@@ -443,7 +460,7 @@
         flex-basis: 100%;
         display: flex;
         justify-content: space-around;
-        margin: 2vh 30vw;
+        margin: 2vh 20vw 1vh 20vw;
         @include mq(tablet) {
             display: none;
         }
@@ -467,7 +484,7 @@
         }
         @include mq(desktop) {
             flex-basis: 45%;
-            margin-left: 7%;
+            margin-left: 9%;
             order: 2;
         }
         & img {
@@ -489,35 +506,49 @@
     }
 
     & p {
-        margin: 1vh 0;
+        margin: 0 0 1vh 0;
+        font-size: 0.8em;
         @include mq(tablet) {
-            font-size: 1em;
+            font-size: 0.9em;
+            padding-left: 10vw;
         }
+        @include mq(desktop) {
+            padding-left: 6vw;
+        }
+    }
 
-        & span {
-            display: inline;
-            font-size: 1.3em;
-            margin-right: 30px;
+    & span {
+        display: inline;
+        float: left;
+        font-size: 1.3em;
+        width: 10vw;
+        min-width: 70px;
+        text-align: left;
+        @include mq(desktop) {
+            width: 6vw;
         }
     }
 
     & a {
+        display: inline-block;
         background-color: $color-primary;
         color: $white;
-        width: 50%;
+        width: 30vw;
         text-transform: uppercase;
         text-align: center;
         padding: 5px 15px;
-        margin: 10px auto;
+        margin: 10px 0 0 10%;
         font-size: 0.7em;
+        text-decoration: underline;
+        cursor: pointer;
         @include mq(tablet) {
             position: absolute;
-            padding: 0 ;
+            padding: 0;
             margin: 0;
             background: none;
             font-size: 0.8em;
-            bottom: 105%;
-            left: 30%;
+            bottom: 103%;
+            left: 43%;
             width: 40%;
             margin-top: 5px;
         }
@@ -526,7 +557,7 @@
             top: 40%;
         }
         &:nth-of-type(2) {
-            margin-left: 9%;
+            margin-left: 10%;
 
             @include mq(tablet) {
                 left: 55%;
@@ -537,6 +568,10 @@
             }
         }
     }
+}
+
+#project-description {
+    padding: 0;
 }
 
 .languages-description {
@@ -582,6 +617,7 @@
         border-right: solid 10px transparent;
         border-bottom: solid 10px $color-font--alt;
         border-left: solid 24px $color-font--alt;
+        cursor: pointer;
         @include mq(desktop) {
             left: 99%;
         }
@@ -599,17 +635,26 @@
                 border-left: solid 45px $color-accent;
             }
         }
-        
         &:nth-of-type(2) {
+            top: 15%;
+        }
+        &:nth-of-type(3) {
             top: 20%;
         }
-
-        &:nth-of-type(3) {
+        &:nth-of-type(4) {
+            top: 25%;
+        }
+        &:nth-of-type(5) {
             top: 30%;
         }
-
-        &:nth-of-type(4) {
+        &:nth-of-type(6) {
+            top: 35%;
+        }
+        &:nth-of-type(7) {
             top: 40%;
+        }
+        &:nth-of-type(8) {
+            top: 45%;
         }
     }
 }
@@ -630,11 +675,6 @@
     @include mq(desktop) {
         background-size: 155%;
     }
-    & h3 {
-        text-align: center;
-        font-size: 1.5em;
-        margin-bottom: 20px;
-    }
 }
 
 .timeline-container {
@@ -642,51 +682,81 @@
     display: flex;
     flex-flow: row nowrap;
     width: 100%;
-    height: 80%;
+    height: 97%;
     border-radius: 20px;
     background: #FFFFFF;
-    background: -moz-linear-gradient(left, transparent 15%, #E48200 100%);
-    background: -webkit-linear-gradient(left, transparent 15%, #E48200 100%);
-    background: linear-gradient(to right, transparent 15%, #E48200 100%);
-
-    & ul {
-        @include flex(flex, column, nowrap, space-around, center);
-        height: 100%;
-        width: 30%;
+    z-index: -1;
+    background: -moz-linear-gradient(left, transparent 15%, #E48200 85%);
+    background: -webkit-linear-gradient(left, transparent 15%, #E48200 85%);
+    background: linear-gradient(to right, transparent 15%, #E48200 85%);
+    @include mq(desktop) {
+        margin-left: 15%;
+        width: 85%;
     }
-
-
-    & .year-button-prev,
-    .year-button-next {
-        background-color: blue;
-        flex-basis: 20%;
-    }
-
 }
 
 .yearlist-container {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 10% 2% 10% 2%;
+    @include flex(flex, column, nowrap, flex-start, center);
+    height: 100%;
+    width: 30%;
+    padding: 5% 2% 20% 2%;
     font-style: italic;
+    color: $color-primary;
     z-index: 1;
     border-right: solid 1px black;
     & li {
-        margin: 20% 0;
+        margin: 15% 0;
+        font-size: 0.9em;
+        cursor: pointer;
+        @include mq(tablet) {
+            font-size: 1.1em;
+            margin: 10% 0;
+        }
+        @include mq(desktop) {
+            font-size: 1.2em;
+            margin: 7% 0;
+        }
     }
 }
 
 .resume-container {
     height: 100%;
     width: 70%;
-    color: $color-font--alt;
-    & .description-container {
-        height: 100%;
-        padding: 15% 2% 10% 2%;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
+}
+
+.description-container {
+    height: 100%;
+    width: 100%;
+    padding: 5% 2% 20% 5%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    line-height: 1em;
+    & h4 {
+        font-size: 1.4em;
+        color: $color-font--alt;
+        margin-bottom: 2vh;
+        @include mq(tablet) {
+            font-size: 1.8em;
+        }
+        @include mq(desktop) {
+            font-size: 2.4em;
+        }
+    }
+    & p {
+        font-size: 0.8em;
+        line-height: 16px;
+        color: $color-primary;
+        @include mq(tablet) {
+            font-size: 1em;
+        }
+        @include mq(desktop) {
+            font-size: 1.2em;
+        }
+        & br {
+            margin-bottom: 1vh;
+        }
+        
     }
 }
 

@@ -32,12 +32,12 @@
         <h1 class="section-title">Home</h1>
         <section class="home-section" id="home">
             <img class="desktop-img" src="images/IMG_1576.JPG">
+            <div class="blur"></div>
+            <div class="previous-arrow"><</div> 
+            <div class="next-arrow">></div>
             <div class="values-container">
-                <div class="blur"></div>
                 <div class="values-card">
-                    <div class="previous-arrow"><</div>
                     <img>
-                    <div class="next-arrow">></div>
                     <div class="text-wrapper">
                         <h4>Design</h4>
                         <p>Design for me means satisfying that appreciation one feels when everything just works. It means knowing the user
@@ -47,9 +47,7 @@
                     </div>
                 </div>
                 <div class="values-card">
-                    <div class="previous-arrow"><</div>
                     <img>
-                    <div class="next-arrow">></div>
                     <div class="text-wrapper">
                         <h4>Technology</h4>
                         <p>Change is the only constant, you have got to keep up or at least try. I am still amazed at the speed of progress
@@ -58,9 +56,7 @@
                     </div>    
                 </div>
                 <div class="values-card">
-                    <div class="previous-arrow"><</div>
                     <img>
-                    <div class="next-arrow">></div>
                     <div class="text-wrapper">
                         <h4>Smart Governance</h4>
                         <p>Government is a reflection of a society and just as a mirror can show you a bad hair day ,government can display
@@ -148,19 +144,19 @@
 
             <div class="book-cover">
             <img class="binding" src="images/spiral_binding.svg">    
-                <div class="book-container">
+                <div class="book-container" id="book-container">
                     <div class="page-flag"></div>
                     <div class="page-flag"></div>
                     <div class="page-flag"></div>
                     <div class="page-flag"></div>
                     <div class="portfolio-wrapper">
                         <h4 id="project-title">Project Title</h4>
-                        <span><</span>
+                        <span id="previous-arrow"><</span>
                         <div class="project-img-container">
                             <img id="project-image">
                         </div>
-                        <span>></span>
-                        <ul>
+                        <span id="next-arrow">></span>
+                        <ul id="dot-container">
                             <li class="dot"></li>
                             <li class="dot"></li>
                             <li class="dot"></li>
@@ -178,8 +174,8 @@
                                 <span id="project-language3">language3</span><p id="language3-description">Ut aliquet nisi vitae risus semper malesuada. Phasellus eleifend vehicula nunc, ullamcorper ultricies dolor
                                 dapibus vitae. Integer tempus orci sed fermentum facilisis.</p> 
                             </div>
-                            <a id="project-website">project website</a>
-                            <a id="project-repository">project repository</a>
+                            <a id="project-website">Website</a>
+                            <a id="project-repository">Repository</a>
                         </div>
                     </div>
                 </div>
@@ -189,20 +185,21 @@
 
         <h1 class="section-title">Resume</h1>
         <section class="resume-section" id="resume">
-            <h3>Life Timeline</h3>
             <div class="timeline-container">
-                <ul class="yearlist-container">
-                    <div class="year-button-prev"></div>
-                    <li>1985-2003</li>
-                    <li>2004-2008</li>
-                    <li>2009-2019</li>
-                    <div class="year-button-next"></div>
+                <ul class="yearlist-container" id="yearlist-container">
+                    <li>1985-1990</li>
+                    <li>1991-1995</li>
+                    <li>1996-2000</li>
+                    <li>2001-2005</li>
+                    <li>2006-2010</li>
+                    <li>2011-2015</li>
+                    <li>2016-2020</li>
                 </ul>
                 
                 <div class="resume-container">
                     <div class="description-container">
-                        <h4>Description Title</h4>
-                        <p>Lorem ipsum dolor site amet, consectetur adipscing elit, sed do eisumod
+                        <h4 id="resume-description-title">Description Title</h4>
+                        <p id="resume-description">Lorem ipsum dolor site amet, consectetur adipscing elit, sed do eisumod
                             tempor incididut ut labore et dolore magna aliqua. Ut enim ad mimim venjam, quis nostrud
                             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>      
