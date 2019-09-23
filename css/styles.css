@@ -434,25 +434,30 @@ h4 {
 
 .section-title {
   display: none;
+  font-family: monospace;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 0 2em;
+  width: 60px;
+  line-height: 0.8em;
+  word-wrap: break-word;
 }
 @media (min-width: 1200px) {
   .section-title {
     display: block;
     position: relative;
-    top: 98%;
-    left: 56%;
-    font-size: 7em;
+    top: 102%;
+    left: 95%;
+    font-size: 5em;
     color: #17384B;
     text-shadow: 7px 7px 7px rgba(0, 0, 0, 0.55);
     z-index: 5;
-    text-align: right;
-    width: 500px;
     font-weight: 200;
   }
 }
 @media (min-width: 1450px) {
   .section-title {
-    left: 67%;
+    left: 95%;
   }
 }
 .section-title:last-of-type {
@@ -633,6 +638,7 @@ nav ul li:hover {
 @media (min-width: 1200px) {
   .desktop-img {
     display: inline-block;
+    max-height: 100%;
     width: 30vw;
     height: 40vw;
     float: left;
@@ -666,9 +672,9 @@ nav ul li:hover {
     flex-wrap: nowrap;
     justify-content: space-evenly;
     align-items: flex-start;
-    height: 28vh;
-    min-height: 300px;
-    padding: 5vh 3vw 2vh 3vw;
+    height: 20%;
+    min-height: 250px;
+    padding: 2vh 3vw 2vh 3vw;
     overflow: hidden;
   }
 }
@@ -726,7 +732,7 @@ nav ul li:hover {
   align-items: center;
   scroll-snap-align: start;
   padding: 10% 4% 3% 2%;
-  height: 87vh;
+  height: 80%;
   font-size: 1em;
   min-width: 95vw;
   z-index: 2;
@@ -745,7 +751,7 @@ nav ul li:hover {
     padding: 0 2%;
     width: 33%;
     min-width: 175px;
-    height: auto;
+    height: 100%;
     justify-content: center;
     align-content: flex-start;
     font-size: 0.6em;
@@ -768,14 +774,13 @@ nav ul li:hover {
 @media (min-width: 1200px) {
   .values-card img {
     margin: 0;
-    width: 13vw;
-    height: 13vw;
+    width: 100%;
   }
 }
 .values-card h4 {
   text-align: center;
   line-height: 28px;
-  margin: 5%;
+  margin-top: 5%;
 }
 
 .text-wrapper {
@@ -797,7 +802,7 @@ nav ul li:hover {
 }
 @media (min-width: 767px) and (min-width: 1200px) {
   .text-wrapper h4 {
-    margin: 2vh 0 0 0;
+    margin: 1vh 0 0 0;
   }
 }
 @media (min-width: 1200px) {
@@ -949,6 +954,8 @@ nav ul li:hover {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    max-width: 90%;
+    margin: 0 auto;
   }
 }
 
@@ -1024,7 +1031,8 @@ nav ul li:hover {
 .skills-list2 li span,
 .skills-list3 li span {
     width: 18vw;
-    margin-left: 40%;
+    padding: 2% 3%;
+    margin-left: 27%;
   }
 }
 
@@ -1236,7 +1244,7 @@ nav ul li:hover {
 
 .project-img-container {
   flex-basis: 79%;
-  max-width: 600px;
+  max-width: 60vh;
   background-color: #E48200;
   border: solid 5px #17384B;
   height: 25vh;
@@ -1288,6 +1296,7 @@ nav ul li:hover {
 }
 @media (min-width: 1200px) {
   .project-info-container p {
+    font-size: 1.08em;
     padding-left: 6vw;
   }
 }
@@ -1353,12 +1362,12 @@ nav ul li:hover {
   }
 }
 .project-info-container a:nth-of-type(2) svg {
-  right: 148px;
+  right: 70%;
   fill: #17384B;
 }
 @media (min-width: 1200px) {
   .project-info-container a:nth-of-type(2) svg {
-    right: 170px;
+    right: 95%;
   }
 }
 .project-info-container a svg {
@@ -1370,7 +1379,7 @@ nav ul li:hover {
   .project-info-container a svg {
     display: inline-block;
     position: absolute;
-    right: 140px;
+    right: 70%;
     top: -5px;
   }
 }
@@ -1378,7 +1387,7 @@ nav ul li:hover {
   .project-info-container a svg {
     width: 50px;
     height: 50px;
-    right: 160px;
+    right: 90%;
   }
 }
 .project-info-container a svg path {
@@ -1387,6 +1396,7 @@ nav ul li:hover {
 
 #project-description {
   padding: 0;
+  margin: 1% 0 2% 0;
 }
 
 .languages-description {
@@ -1444,7 +1454,7 @@ nav ul li:hover {
 @media (min-width: 767px) {
   .page-flag.active {
     z-index: 2;
-    left: 92%;
+    left: 83.5vw;
     border-top: solid 10px #E48200;
     border-right: solid 10px transparent;
     border-bottom: solid 10px #E48200;
@@ -1558,14 +1568,15 @@ nav ul li:hover {
 @media (min-width: 767px) {
   .yearlist-container li {
     font-size: 1.1em;
-    margin: calc(8% - 1vw) 0;
+    margin: 1vh 0;
+    padding-left: 5vw;
   }
 }
 @media (min-width: 1200px) {
   .yearlist-container li {
     font-size: 1.2em;
     margin: 7% 0;
-    padding-left: 20%;
+    padding-left: 15vw;
   }
 }
 @media (min-width: 1450px) {
@@ -1679,6 +1690,7 @@ nav ul li:hover {
 }
 @media (min-width: 767px) {
   .contact-section ul li {
+    justify-content: flex-start;
     text-align: left;
     font-size: 2em;
   }
@@ -1686,7 +1698,6 @@ nav ul li:hover {
 @media (min-width: 1200px) {
   .contact-section ul li {
     flex-basis: 45%;
-    justify-content: flex-start;
   }
 }
 .contact-section ul li p {
@@ -1694,16 +1705,14 @@ nav ul li:hover {
 }
 @media (min-width: 767px) {
   .contact-section ul li p {
-    flex-basis: 20%;
+    flex-basis: 25%;
   }
 }
 @media (min-width: 1200px) {
   .contact-section ul li p {
     flex-basis: 60%;
+    margin-left: 10px;
   }
-}
-.contact-section ul li p:nth-of-type(odd) {
-  flex-basis: 45%;
 }
 .contact-section ul li svg {
   width: 10vw;

@@ -309,7 +309,7 @@ $(document).ready(function() {
         [`css-language`, `javascript-language`],
         `CSS`,
         `The CSS in this project was a simple grid layout with flexbox cards within. The challenging aspect of the project was to properly position the custom lightbox function when the user clicked don the employee card. Animated cards when cycling between employees also proved to be a bit difficult.`,
-        `JavaScript`,
+        `JS`,
         `This was my first dive into pulling data from an API. Using the fetch command and understanding the use of promises was key to creating the proper functionality of this site. Switching between employees in lightbox view was also especially challenging. As a final touch I included the search function to filter the gallery by name. `,
         null,
         null

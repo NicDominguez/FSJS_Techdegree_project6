@@ -38,21 +38,26 @@ h4 {
 
 .section-title {
     display: none;
+    font-family: monospace;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 2em;
+    width: 60px;
+    line-height: .8em;
+    word-wrap: break-word;
     @include mq(desktop) {
         display: block;
         position: relative;
-        top: 98%;
-        left: 56%;
-        font-size: 7em;
+        top: 102%;
+        left: 95%;
+        font-size: 5em;
         color: $color-primary;
         text-shadow: 7px 7px 7px rgba(0,0,0,0.55);
         z-index: 5;
-        text-align: right;
-        width: 500px;
         font-weight: 200;
     }
     @include mq(wide) {
-        left: 67%;
+        left: 95%;
     }
     &:last-of-type {
         color: $color-font--alt;
