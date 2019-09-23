@@ -19,14 +19,22 @@ header {
         height: 75px;
         padding: 15px 30px;
     }
+    & a {
+        flex-basis: 10%;
+        align-self: center;
+    }
 
     & img {
-        flex-basis: 4%;
-        max-height: 40px;
-        margin-right: 10px;
-        align-self: flex-start;
+        height: 100%;
+        width: 100%;
+        margin-bottom: 0.5vh;
+        max-height: 35px;
+        @include mq(tablet) {
+            max-height: 40px;
+        }
         @include mq(desktop) {
             max-height: 45px;
+            margin: 0;
         }
     }
 

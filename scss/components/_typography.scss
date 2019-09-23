@@ -42,14 +42,17 @@ h4 {
         display: block;
         position: relative;
         top: 98%;
-        left: 60%;
+        left: 56%;
         font-size: 7em;
         color: $color-primary;
         text-shadow: 7px 7px 7px rgba(0,0,0,0.55);
         z-index: 5;
         text-align: right;
-        width: 450px;
+        width: 500px;
         font-weight: 200;
+    }
+    @include mq(wide) {
+        left: 67%;
     }
     &:last-of-type {
         color: $color-font--alt;

@@ -60,26 +60,26 @@ $(document).ready(function() {
     //Skill List Object Creation 
     const pmSkillList = {
         contracting: 60,
-        leadership: 70,
-        datamanagement: 80,
+        leadership: 60,
+        datamanagement: 70,
         communication: 70,
-        projectmanagement: 60,
+        projectmanagement: 80,
         organizationaldevelopment: 50
     }
 
     const wdSkillList = {
-        uidesign: 50,
-        html: 80,
+        uidesign: 30,
+        html: 70,
         css: 70,
-        sass: 60,
-        javascript: 40,
-        jquery: 50
+        sass: 50,
+        javascript: 50,
+        jquery: 40
     }
 
     const hobSkillList = {
         boardgaming: 70,
         reading: 80,
-        mcutrivia: 100,
+        mcutrivia: 90,
         goalkeeping: 60,
         traveling: 80,
         volleyball: 50
@@ -89,10 +89,14 @@ $(document).ready(function() {
     if ($(window).width() < 1200) {
         displayPercentages(pmList, pmSkillList)
         setSkillBarWidths(pmList, pmSkillList)
+        setSkillBarWidthstoZero(wdList, wdSkillList)
+        setSkillBarWidthstoZero(hobList, hobSkillList)
     }
 
     //Set all Skill Lists on Page Load if Desktop
     if ($(window).width() >= 1200) {
+        hobList.show()
+        wdList.show()
         displayPercentages(pmList, pmSkillList)
         setSkillBarWidths(pmList, pmSkillList)
         displayPercentages(wdList, wdSkillList)
@@ -224,12 +228,12 @@ $(document).ready(function() {
         `images/project3_image.JPG`,
         `https://nicdominguez.github.io/FEWD_Techdegree_project3`,
         `https://github.com/NicDominguez/FEWD_Techdegree_project3`,
-        `This is the description for project 3`,
+        `This project represents a potential site registration form with responsive design and back-end ready html. The project uses the most common input elements including radio buttons, checkboxes, select inputs, and text areas. Forms like this are common on site looking for customer interaction or feedback.`,
         [`html-language`, `css-language`],
         `HTML`,
-        `Ths is an explanation for the use of HTML`,
+        `The HTML in this project is all about proper use of attributes to identify the function of each element of the page. Each tag requires the “type”, “id”, and “name” attribute to match the input with the corresponding label. Correct use of the fieldset and legend tags properly organize the page elements.`,
         `CSS`,
-        `This is an explanation for the use of CSS`,
+        `The form is responsive with the use of flexbox and width properties. I also gave subtle animations to the focus state to highlight the user interaction on each input element. Using the placeholder pseudo selector also allowed me to style to placeholder text to match the page style.`,
         null,
         null
     )
@@ -239,14 +243,16 @@ $(document).ready(function() {
         `images/project4_image.JPG`,
         `https://nicdominguez.github.io/FEWD_Techdegree_project4`,
         `https://github.com/NicDominguez/FEWD_Techdegree_project4`,
-        `This is the description for project 4`,
-        [`html-language`, `css-language`, `sass-language`],
-        `HTML`,
-        `Ths is an explanation for the use of HTML`,
+        `The Web Style Guide is a representation of what a front-end development team would use to establish the base styles of a website. It uses Sass to create a flexible code base that can change easily with any desired changes in styles. Variable, placeholders, and mixins give the multi-tiered file structure of the sass the ability to push any small changes from the variables partial up through to the final CSS stylesheet.`,
+        [`css-language`, `sass-language`],
         `CSS`,
-        `This is an explanation for the use of CSS`,
+        `The css in this project used a class based grid system to establish element width. The grid system is full responsive with flex-box and the typography and picture elements with adjust place depending on window width. `,
         `Sass`,
-        `This is an explanation for the use of Sass`
+        `Notable elements of the Sass code in the project are the us of mapping for theme color variables and place holders for for many of the common style properties. I also created several helper functions to make styling easier and heavily used variables and mixins to create a more flexible design.`,
+        null,
+        null
+
+
     )
 
     const project5 = new PortfolioProject(
@@ -254,12 +260,12 @@ $(document).ready(function() {
         `images/project5_image.JPG`,
         `https://nicdominguez.github.io/FEWD_Techdegree_project5`,
         `https://github.com/NicDominguez/FEWD_Techdegree_project5`,
-        `This is the description for project 5`,
+        `This project was my first introduction to jquery plugins. The photo gallery lightbox combination is a common instance on websites to display any type of photo content. The gallery is responsive and there is also an additional functioning search box. Captions are also included which are the basis for the search function.`,
         [`css-language`, `jquery-language`],
         `CSS`,
-        `This is an explanation for the use of CSS`,
+        `The CSS in this project is designed to work with the light gallery plug-in. Adjustments are made to the display of the photo to give the light box the proper width and align the additional elements such as the next and previous arrows and the captions. Subtle hover animations are also included to give the gallery a bit of interaction with the user.`,
         `JQuery`,
-        `This is an explanation for the use of Hquery`,
+        `Implementation of the lightbox plug in required good understanding of the supplied documentation to know what options I wanted to include and how to resize the lightbox elements. The search functionality was especially challenging on this project as it required looping through the caption array and dynamically changing the gallery contents based on the text input.`,
         null,
         null
     )
@@ -269,12 +275,12 @@ $(document).ready(function() {
         `images/project6_image.JPG`,
         `https://nicdominguez.github.io/FEWD_Techdegree_project6`,
         `https://github.com/NicDominguez/FEWD_Techdegree_project6`,
-        `This is the description for project 6`,
+        `This was a particularly fun project and a good representation of my starting point with vanilla JavaScript. It is an elegant version of the standard “hang-man” word game using my favorite theme you'll get from the potential answers. Each interaction is animated for the suer and the game is set to reset if the user would like to play again. Visually representing the keyboard and having it react to the status of the guesses was especially challenging.`,
         [`css-language`, `javascript-language`],
         `CSS`,
-        `This is an explanation for the use of CSS`,
-        `JavaScript`,
-        `This is an explanation for the use of JavaScript`,
+        `Highlight s in the CSS of this project include the use of variables for both colors and fonts as well as the inclusion of a keyframe animation. The overlay screens are positioned as fixed flexbox containers that change dynamically with the status of the game.`,
+        `JS`,
+        `This project required implementation of multiple click events and functions to check the status of both the guesses and the game. I originally struggled with understanding how the game would check if the chosen character was in the answer but after reviewing how my look was functioning nad how to select the characters in my array I was able to accurately display the chosen letters. One core theme I realised in this project was the need for many of the functions on a website to reset after their initial function and how difficult that reset can be to code.`,
         null,
         null
     )
@@ -284,14 +290,14 @@ $(document).ready(function() {
         `images/project7_image.JPG`,
         `https://nicdominguez.github.io/FEWD_Techdegree_project7`,
         `https://github.com/NicDominguez/FEWD_Techdegree_project7`,
-        `This is the description for project 7`,
+        `This project combined much of what I had learned so far at the time. The HTML required accurate and well organized semantic markup and the CSS uses a grid display with flex-box containers within the grid sections. The Javascript creates the functionality for the interactive notification icon and form elements. This was also my first use of the chart.js library to represent the fictional traffic data. Dashboards like these are useful across industries for better management of resources and understanding user tendencies.`,
         [`html-language`, `css-language`, `javascript-language`],
         `HTML`,
-        `Ths is an explanation for the use of HTML`,
+        `Many common html elements were sued in combination to form this page. The site includes form elements, responsive widget containers and semantic tags to better organize the content of each section.`,
         `CSS`,
-        `This is an explanation for the use of CSS`,
-        `JavaScript`,
-        `This is an explanation for the use of JavaScript`
+        `The grid system in this project allows for a responsive design that also maintains proper proportions and order for each section giving a  professional style to the page. Within each section flexbox and traditional media queries provided the layout changes as the window resizes. I also made use of styling the inline svg images to better match the style of the page. `,
+        `JS`,
+        `The notable JavaScript functions were the use of the chart.js library and the introduction of the use of local storage into my projects. I created all the data in charts and the associated events to display the data. Use of local storage allowed me to save the settings data of the user and apply the correct settings after closing the browser.`
     )
 
     const project8 = new PortfolioProject(
@@ -299,12 +305,12 @@ $(document).ready(function() {
         `images/project8_image.JPG`,
         `https://nicdominguez.github.io/FEWD_Techdegree_project8`,
         `https://github.com/NicDominguez/FEWD_Techdegree_project8`,
-        `This is the description for project 8`,
+        `This project represents a common employee directory for any potential business. The employee data is pulled from the randomuser.me api and converted from JSON to what is seen in the gallery. Working with an API provided its own set of challenges but I can easily see how beneficial they are when dealing with large quantities of outside data.`,
         [`css-language`, `javascript-language`],
         `CSS`,
-        `This is an explanation for the use of CSS`,
+        `The CSS in this project was a simple grid layout with flexbox cards within. The challenging aspect of the project was to properly position the custom lightbox function when the user clicked don the employee card. Animated cards when cycling between employees also proved to be a bit difficult.`,
         `JavaScript`,
-        `This is an explanation for the use of Javascript`,
+        `This was my first dive into pulling data from an API. Using the fetch command and understanding the use of promises was key to creating the proper functionality of this site. Switching between employees in lightbox view was also especially challenging. As a final touch I included the search function to filter the gallery by name. `,
         null,
         null
     )
@@ -364,6 +370,8 @@ $(document).ready(function() {
     updateViewableProjects()
     updatePageFlagsandDots()
     updateProjectView(viewableProjects[0])
+    $(`.page-flag:first`).addClass(`active`)
+    $(`.dot:first`).addClass(`active`)
 
     //==========================================================
     //     Events
@@ -398,6 +406,8 @@ $(document).ready(function() {
         if (viewableProjects.length >= 1) {
             updateProjectView(viewableProjects[0])
         }
+        $(`.page-flag:first`).addClass(`active`)
+        $(`.dot:first`).addClass(`active`)
 
     })
 
@@ -405,13 +415,23 @@ $(document).ready(function() {
     $(`#next-arrow`).click(function () {
         if (currentProjectIndex < viewableProjects.length - 1) {
             updateProjectView(viewableProjects[currentProjectIndex + 1])
+            let nextDot = dotContainer.find(`.active`).next()
+            $(`.dot`).each(function (index) {
+                $(this).removeClass(`active`)
+                nextDot.addClass(`active`)
+            })
         }
     })
 
-    // Cycle to next project on mobile view
+    // Cycle to previous project on mobile view
     $(`#previous-arrow`).click(function () {
         if (currentProjectIndex >= 1) {
             updateProjectView(viewableProjects[currentProjectIndex - 1])
+            let prevDot = dotContainer.find(`.active`).prev()
+            $(`.dot`).each(function (index) {
+                $(this).removeClass(`active`)
+                prevDot.addClass(`active`)
+            })
         }
     })
 
@@ -419,6 +439,8 @@ $(document).ready(function() {
     bookContainer.on("click", ".page-flag", function () {
         let index = $(this).index()
         updateProjectView(viewableProjects[index])
+        $(`.page-flag`).each(function() {$(this).removeClass(`active`)})
+        $(this).addClass(`active`)
     })
 
     //==========================================================
@@ -502,6 +524,7 @@ $(document).ready(function() {
     //==========================================================
 
     const yearlistContainer = $(`#yearlist-container`)
+    const resumeDescritpionContainer = $(`#resume-description-container`)
     const resumeTitle = $(`#resume-description-title`)
     const resumeDescription = $(`#resume-description`)
 
@@ -579,6 +602,7 @@ $(document).ready(function() {
         resumeTitle.text(title)
         resumeDescription.html(description)
     })
+
 
 });
 

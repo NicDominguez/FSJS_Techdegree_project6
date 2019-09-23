@@ -15,8 +15,8 @@
             @content;
         }
     }
-    @else if $breakpoint == landscape {
-        @media (orientation: landscape) {
+    @else if $breakpoint == wide {
+        @media (min-width: $break-wide) {
             @content;
         }
     }
