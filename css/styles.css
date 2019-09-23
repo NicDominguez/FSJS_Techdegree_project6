@@ -823,7 +823,7 @@ nav ul li:hover {
   .desktop-description {
     display: block;
     height: auto;
-    padding: 0 5% 0 40%;
+    padding: 0 10% 0 45%;
     margin-bottom: 8vh;
   }
 }
@@ -901,6 +901,11 @@ nav ul li:hover {
   width: 33%;
   margin: 0 1%;
 }
+@media (min-width: 1200px) {
+  .skill-category {
+    display: inline-block;
+  }
+}
 .skill-category img {
   border-radius: 50%;
   background-color: #839595;
@@ -910,6 +915,14 @@ nav ul li:hover {
   max-width: 200px;
   max-height: 200px;
 }
+@media (min-width: 1200px) {
+  .skill-category img {
+    width: 8vw;
+    height: 8vw;
+    margin-right: 1vw;
+    float: left;
+  }
+}
 .skill-category h4 {
   font-size: 0.9em;
   margin: 5% 0;
@@ -917,6 +930,21 @@ nav ul li:hover {
 @media (min-width: 767px) {
   .skill-category h4 {
     font-size: 1.2em;
+  }
+}
+@media (min-width: 1200px) {
+  .skill-category h4 {
+    flex-basis: 70%;
+    color: #17384B;
+    font-size: 1.4em;
+  }
+}
+.skill-category p {
+  display: none;
+}
+@media (min-width: 1200px) {
+  .skill-category p {
+    display: block;
   }
 }
 
@@ -935,15 +963,7 @@ nav ul li:hover {
 }
 @media (min-width: 1200px) {
   .category-description {
-    width: 75%;
-    height: 16vh;
-    font-size: 1.1em;
-    overflow: hidden;
-  }
-}
-@media (min-width: 1450px) {
-  .category-description {
-    height: 12vh;
+    display: none;
   }
 }
 
@@ -954,8 +974,8 @@ nav ul li:hover {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    max-width: 90%;
-    margin: 0 auto;
+    max-width: 95%;
+    margin: 2vh auto;
   }
 }
 
@@ -1011,7 +1031,7 @@ nav ul li:hover {
   .skills-list li p,
 .skills-list2 li p,
 .skills-list3 li p {
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 600;
   }
 }
@@ -1032,7 +1052,7 @@ nav ul li:hover {
 .skills-list3 li span {
     width: 18vw;
     padding: 2% 3%;
-    margin-left: 27%;
+    margin-left: 29%;
   }
 }
 
