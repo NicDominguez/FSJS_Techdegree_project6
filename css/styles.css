@@ -1638,9 +1638,9 @@ nav ul li:hover {
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
-  height: 100%;
   width: 30%;
-  padding: 5% 2% 60% 2%;
+  max-height: 100%;
+  padding: 5% 2% 40% 2%;
   font-style: italic;
   color: #17384B;
   z-index: 1;

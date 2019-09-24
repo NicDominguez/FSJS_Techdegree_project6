@@ -835,9 +835,9 @@
 
 .yearlist-container {
     @include flex(flex, column, nowrap, flex-start, center);
-    height: 100%;
     width: 30%;
-    padding: 5% 2% 60% 2%;
+    max-height: 100%;
+    padding: 5% 2% 40% 2%;
     font-style: italic;
     color: $color-primary;
     z-index: 1;
