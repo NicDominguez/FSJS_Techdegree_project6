@@ -5,7 +5,7 @@
 //==========================================================
 
 .home-section {
-    @include background('../images/IMG_1139.JPG', cover, center, no-repeat);
+    @include background('../images/home_background.JPG', cover, center, no-repeat);
     position: relative;
     @include mq(desktop) {
         background-image: url(../images/background-home-desktop.svg);
@@ -20,7 +20,7 @@
         width: 30vw;
         height: 40vw;
         float: left;
-
+        border-radius: 20px;
     }
 }
 
@@ -76,7 +76,7 @@
     font-size: 4em;
     color: $color-primary;
     z-index: 2;
-    top: 145vw;
+    top: 85%;
 
     @include mq(tablet) {
         display: none
@@ -377,7 +377,7 @@
         @include mq(tablet) {
             font-size: 2em;
             float: left;
-            margin: 3vh 10px 10px 20px;
+            margin: 2vh 10px 10px 20px;
         }
     }
     hr {
@@ -390,7 +390,7 @@
     @include flex(flex, row, nowrap, space-around, center);
     margin: 1vh 0px 10px 0px;
     @include mq(tablet) {
-        margin-top: 3vh;
+        margin-top: 2vh;
     }
     & li {
         margin: 0 2px;
@@ -703,7 +703,7 @@
 
         &.active {
             z-index: 2;
-            left: 83.5vw;
+            left: 92%;
             border-top: solid 10px $color-accent;
             border-right: solid 10px transparent;
             border-bottom: solid 10px $color-accent;
@@ -864,7 +864,7 @@
 .contact-section {
     @include background('../images/blue_trapazoid_background.svg', cover, center, no-repeat);
     @include mq(tablet) {
-        background-image: url(../images/blue_trapazoid_background.svg), url(../images/IMG_1986.jpg);
+        background-image: url(../images/blue_trapazoid_background.svg), url(../images/contact_background.JPG);
     }
     
     & ul {

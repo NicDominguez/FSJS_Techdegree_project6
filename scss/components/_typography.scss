@@ -47,8 +47,8 @@ h4 {
     word-wrap: break-word;
     @include mq(desktop) {
         display: block;
-        position: relative;
-        top: 102%;
+        position: absolute;
+        top: 71%;
         left: 95%;
         font-size: 5em;
         color: $color-primary;
@@ -59,7 +59,17 @@ h4 {
     @include mq(wide) {
         left: 95%;
     }
-    &:last-of-type {
+    &:nth-of-type(2) {
+        top: 153%;
+    }
+    &:nth-of-type(3){
+        top: 243%;
+    }
+    &:nth-of-type(4){
+        top: 348%;
+    }
+    &:nth-of-type(5){
+        top: 453%;
         color: $color-font--alt;
     }
 }

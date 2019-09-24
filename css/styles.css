@@ -367,7 +367,6 @@ body {
   margin: 0px;
   padding: 0px;
   min-width: 320px;
-  height: calc(100vh * 5 + 50px);
   overflow: hidden;
 }
 
@@ -445,8 +444,8 @@ h4 {
 @media (min-width: 1200px) {
   .section-title {
     display: block;
-    position: relative;
-    top: 102%;
+    position: absolute;
+    top: 71%;
     left: 95%;
     font-size: 5em;
     color: #17384B;
@@ -460,7 +459,17 @@ h4 {
     left: 95%;
   }
 }
-.section-title:last-of-type {
+.section-title:nth-of-type(2) {
+  top: 153%;
+}
+.section-title:nth-of-type(3) {
+  top: 243%;
+}
+.section-title:nth-of-type(4) {
+  top: 348%;
+}
+.section-title:nth-of-type(5) {
+  top: 453%;
   color: #FDFFFB;
 }
 
@@ -620,7 +629,7 @@ nav ul li:hover {
 
 /* Import of layout.scss */
 .home-section {
-  background-image: url("../images/IMG_1139.JPG");
+  background-image: url("../images/home_background.JPG");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -642,6 +651,7 @@ nav ul li:hover {
     width: 30vw;
     height: 40vw;
     float: left;
+    border-radius: 20px;
   }
 }
 
@@ -707,7 +717,7 @@ nav ul li:hover {
   font-size: 4em;
   color: #17384B;
   z-index: 2;
-  top: 145vw;
+  top: 85%;
 }
 @media (min-width: 767px) {
   .previous-arrow,
@@ -1095,7 +1105,7 @@ nav ul li:hover {
   .portfolio-section h3 {
     font-size: 2em;
     float: left;
-    margin: 3vh 10px 10px 20px;
+    margin: 2vh 10px 10px 20px;
   }
 }
 .portfolio-section hr {
@@ -1113,7 +1123,7 @@ nav ul li:hover {
 }
 @media (min-width: 767px) {
   .language-list {
-    margin-top: 3vh;
+    margin-top: 2vh;
   }
 }
 .language-list li {
@@ -1474,7 +1484,7 @@ nav ul li:hover {
 @media (min-width: 767px) {
   .page-flag.active {
     z-index: 2;
-    left: 83.5vw;
+    left: 92%;
     border-top: solid 10px #E48200;
     border-right: solid 10px transparent;
     border-bottom: solid 10px #E48200;
@@ -1675,7 +1685,7 @@ nav ul li:hover {
 }
 @media (min-width: 767px) {
   .contact-section {
-    background-image: url(../images/blue_trapazoid_background.svg), url(../images/IMG_1986.jpg);
+    background-image: url(../images/blue_trapazoid_background.svg), url(../images/contact_background.JPG);
   }
 }
 .contact-section ul {
