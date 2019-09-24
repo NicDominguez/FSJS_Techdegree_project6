@@ -87,6 +87,8 @@ $(document).ready(function() {
 
      //Set Program Management Skill List on Page Load if Mobile and Tablet
     if ($(window).width() < 1200) {
+        $(pmCategory).css("transform", "scale(1.15)")
+        $(pmCategory).children("img").css("box-shadow", "5px 5px 15px -3px rgba(0,0,0,0.5)")
         displayPercentages(pmList, pmSkillList)
         setSkillBarWidths(pmList, pmSkillList)
         setSkillBarWidthstoZero(wdList, wdSkillList)
@@ -108,6 +110,10 @@ $(document).ready(function() {
     //Click Events for Each Skill Category
     pmCategory.click(function () {
         if ($(window).width() < 1200) {
+            $(this).css("transform", "scale(1.15)")
+            $(this).children("img").css("box-shadow", "5px 5px 15px -3px rgba(0,0,0,0.5)")
+            wdCategory.css("transform", "scale(1)")
+            hobCategory.css("transform", "scale(1)")
             pmList.show()
             wdList.hide()
             hobList.hide()
@@ -125,6 +131,10 @@ $(document).ready(function() {
 
     wdCategory.click(function () {
         if ($(window).width() < 1200) {
+            $(this).css("transform", "scale(1.15)")
+            $(this).children("img").css("box-shadow", "5px 5px 15px -3px rgba(0,0,0,0.5)")
+            pmCategory.css("transform", "scale(1)")
+            hobCategory.css("transform", "scale(1)")
             pmList.hide()
             wdList.show()
             hobList.hide()
@@ -142,6 +152,10 @@ $(document).ready(function() {
 
     hobCategory.click(function () {
         if ($(window).width() < 1200) {
+            $(this).css("transform", "scale(1.15)")
+            $(this).children("img").css("box-shadow", "5px 5px 15px -3px rgba(0,0,0,0.5)")
+            pmCategory.css("transform", "scale(1)")
+            wdCategory.css("transform", "scale(1)")
             pmList.hide()
             wdList.hide()
             hobList.show()

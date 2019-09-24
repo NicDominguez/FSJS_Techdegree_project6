@@ -235,6 +235,7 @@
     @include flex(inline-flex, column, nowrap, space-around, center);
     width: 33%;
     margin: 0 1%;
+    transition: transform 0.2s ease-out;
     @include mq(desktop) {
         display: inline-block;
     }
@@ -351,6 +352,7 @@
 .skills-list2,
 .skills-list3 {
     display: none;
+    transition: width 0.5s ease-in;
     @include mq(desktop) {
         @include flex(inline-flex, row, wrap, flex-start, flex-start);
         border-left: dashed 1px $color-primary;
@@ -448,6 +450,7 @@
         height: 100.5%;
         padding: 0px 10px 0px 10px;
     }
+
 }
 
 .portfolio-wrapper {
@@ -468,6 +471,13 @@
     @include mq(desktop) {
         width: 100%;
         padding: 3%;
+/*         //PageFlipLeft Animation
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-transform-origin: left center;
+        transform-origin: left center;
+        -webkit-animation: pageFlipLeft 1.65s linear;
+        animation: pageFlipLeft 1.65s linear; */
     }
 
     & h4 {
@@ -741,7 +751,53 @@
     }
 }
 
-
+/* Page turn */
+@-webkit-keyframes pageFlipLeft {
+  0% {
+    -webkit-transform: rotateY(0deg) translateZ(1px);
+            transform: rotateY(0deg) translateZ(1px);
+    background: #FFF;
+  }
+  20%, 50% {
+    background: #F1F2E1;
+  }
+  50% {
+    background: #D7D9C3;
+  }
+  80% {
+    -webkit-transform: rotateY( -180deg);
+            transform: rotateY( -180deg);
+    background: #F1F2E1;
+  }
+  100% {
+    -webkit-transform: rotateY( -180deg);
+            transform: rotateY( -180deg);
+    background: #fff;
+  }
+}
+@keyframes pageFlipLeft {
+  0% {
+    -webkit-transform: rotateY(0deg) translateZ(1px);
+            transform: rotateY(0deg) translateZ(1px);
+    background: #FFF;
+  }
+  20%, 50% {
+    background: #F1F2E1;
+  }
+  50% {
+    background: #D7D9C3;
+  }
+  80% {
+    -webkit-transform: rotateY( -180deg);
+            transform: rotateY( -180deg);
+    background: #F1F2E1;
+  }
+  100% {
+    -webkit-transform: rotateY( -180deg);
+            transform: rotateY( -180deg);
+    background: #fff;
+  }
+}
 
 //==========================================================
 //      Resume Section
@@ -798,7 +854,7 @@
         @include mq(desktop) {
             font-size: 1.2em;
             margin: 7% 0;
-            padding-left: 15vw;
+            padding-left: 15%;
         }
         @include mq(wide) {
             margin: 3% 0;

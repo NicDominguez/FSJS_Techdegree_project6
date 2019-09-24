@@ -910,6 +910,7 @@ nav ul li:hover {
   align-items: center;
   width: 33%;
   margin: 0 1%;
+  transition: transform 0.2s ease-out;
 }
 @media (min-width: 1200px) {
   .skill-category {
@@ -1069,6 +1070,7 @@ nav ul li:hover {
 .skills-list2,
 .skills-list3 {
   display: none;
+  transition: width 0.5s ease-in;
 }
 @media (min-width: 1200px) {
   .skills-list2,
@@ -1214,6 +1216,13 @@ nav ul li:hover {
   .portfolio-wrapper {
     width: 100%;
     padding: 3%;
+    /*         //PageFlipLeft Animation
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-transform-origin: left center;
+            transform-origin: left center;
+            -webkit-animation: pageFlipLeft 1.65s linear;
+            animation: pageFlipLeft 1.65s linear; */
   }
 }
 .portfolio-wrapper h4 {
@@ -1538,6 +1547,53 @@ nav ul li:hover {
   }
 }
 
+/* Page turn */
+@-webkit-keyframes pageFlipLeft {
+  0% {
+    -webkit-transform: rotateY(0deg) translateZ(1px);
+    transform: rotateY(0deg) translateZ(1px);
+    background: #FFF;
+  }
+  20%, 50% {
+    background: #F1F2E1;
+  }
+  50% {
+    background: #D7D9C3;
+  }
+  80% {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    background: #F1F2E1;
+  }
+  100% {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    background: #fff;
+  }
+}
+@keyframes pageFlipLeft {
+  0% {
+    -webkit-transform: rotateY(0deg) translateZ(1px);
+    transform: rotateY(0deg) translateZ(1px);
+    background: #FFF;
+  }
+  20%, 50% {
+    background: #F1F2E1;
+  }
+  50% {
+    background: #D7D9C3;
+  }
+  80% {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    background: #F1F2E1;
+  }
+  100% {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    background: #fff;
+  }
+}
 .resume-section {
   background-image: url("../images/blue_triangle_background.svg");
   background-size: cover;
@@ -1606,7 +1662,7 @@ nav ul li:hover {
   .yearlist-container li {
     font-size: 1.2em;
     margin: 7% 0;
-    padding-left: 15vw;
+    padding-left: 15%;
   }
 }
 @media (min-width: 1450px) {
