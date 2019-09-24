@@ -13,7 +13,7 @@ $(document).ready(function() {
 
         
         $('section').each(function() {
-            let section_pos = $(this).position().top
+            let section_pos = $(this).position().top;
 
             if ((y_pos) >= section_pos) {
                 /* console.log('change triggered at' + y_pos) */
@@ -24,10 +24,10 @@ $(document).ready(function() {
     });
 
     // Expand Header Navigation
-    const header = $('header')
-    const navBtn = $('#nav-menu-btn')
-    const nav = $('nav')
-    const navLink = $('nav').find('li')
+    const header = $('header');
+    const navBtn = $('#nav-menu-btn');
+    const nav = $('nav');
+    const navLink = $('nav').find('li');
     
     navBtn.click(function () {
         header.toggleClass('expanded-header')
@@ -40,22 +40,22 @@ $(document).ready(function() {
             nav.toggle()
         }
 
-    })
+    });
 
 //==========================================================
 //     ABOUT SECTION
 //==========================================================
 
     //Skill Category Switching 
-    const pmCategory = $('#program-management-category')
-    const wdCategory = $('#web-development-category')
-    const hobCategory = $('#hobbies-category')
+    const pmCategory = $('#program-management-category');
+    const wdCategory = $('#web-development-category');
+    const hobCategory = $('#hobbies-category');
 
-    const pmList = $('#program-management-skill-list')
-    const wdList = $('#web-development-skill-list')
-    const hobList = $('#hobbies-skill-list')
+    const pmList = $('#program-management-skill-list');
+    const wdList = $('#web-development-skill-list');
+    const hobList = $('#hobbies-skill-list');
 
-    const catDescription =$('#category-description').find('p')
+    const catDescription =$('#category-description').find('p');
 
     //Skill List Object Creation 
     const pmSkillList = {
@@ -65,7 +65,7 @@ $(document).ready(function() {
         communication: 70,
         projectmanagement: 80,
         organizationaldevelopment: 50
-    }
+    };
 
     const wdSkillList = {
         uidesign: 30,
@@ -74,7 +74,7 @@ $(document).ready(function() {
         sass: 50,
         javascript: 50,
         jquery: 40
-    }
+    };
 
     const hobSkillList = {
         boardgaming: 70,
@@ -83,7 +83,7 @@ $(document).ready(function() {
         goalkeeping: 60,
         traveling: 80,
         volleyball: 50
-    }
+    };
 
      //Set Program Management Skill List on Page Load if Mobile and Tablet
     if ($(window).width() < 1200) {
@@ -120,7 +120,7 @@ $(document).ready(function() {
 
             catDescription.text(`
                 My experience in program management comes primarily from my work with San Francisco Municipal Transportation Agency. I worked for the Human Resources team for eight years in regulatory compliance. Sounds invigorating, right? Yea not really, but  the experience did grant me valuable insight into the inner workings of the public sector and how programs are interwoven throughout the broader goals of a municipal agency. I learned many valuable skills from contracting to database management and I developed a desire to address many of the problems I have witnessed throughout my early career. Below I have listed several of the main skills I developed and how proficient I am at each.
-            `)
+            `);
 
             displayPercentages(pmList, pmSkillList)
             setSkillBarWidths(pmList, pmSkillList)
@@ -179,7 +179,7 @@ $(document).ready(function() {
             let keys = Object.keys(obj)
             $(this).find("span").html(obj[keys[index]] + "&#37")
         })
-    }
+    };
 
     //Setting Skill Bar Widths
     function setSkillBarWidths(array, obj) {
@@ -187,15 +187,14 @@ $(document).ready(function() {
             let keys = Object.keys(obj)
             $(this).find("span").css("width", obj[keys[index]]/1.5 + "%")
         })
-    }
+    };
 
     //Setting Skill Bar Widths to Zero
-    function setSkillBarWidthstoZero(array, obj) {
+    function setSkillBarWidthstoZero(array) {
         array.children("li").each(function (index) {
-            let keys = Object.keys(obj)
             $(this).find("span").css("width", 10 + "%")
         })
-    }
+    };
 
 //==========================================================
 //     PORTFOLIO SECTION
@@ -430,7 +429,7 @@ $(document).ready(function() {
         if (currentProjectIndex < viewableProjects.length - 1) {
             updateProjectView(viewableProjects[currentProjectIndex + 1])
             let nextDot = dotContainer.find(`.active`).next()
-            $(`.dot`).each(function (index) {
+            $(`.dot`).each(function () {
                 $(this).removeClass(`active`)
                 nextDot.addClass(`active`)
             })
@@ -442,7 +441,7 @@ $(document).ready(function() {
         if (currentProjectIndex >= 1) {
             updateProjectView(viewableProjects[currentProjectIndex - 1])
             let prevDot = dotContainer.find(`.active`).prev()
-            $(`.dot`).each(function (index) {
+            $(`.dot`).each(function () {
                 $(this).removeClass(`active`)
                 prevDot.addClass(`active`)
             })
@@ -538,7 +537,6 @@ $(document).ready(function() {
     //==========================================================
 
     const yearlistContainer = $(`#yearlist-container`)
-    const resumeDescritpionContainer = $(`#resume-description-container`)
     const resumeTitle = $(`#resume-description-title`)
     const resumeDescription = $(`#resume-description`)
 
@@ -613,11 +611,15 @@ $(document).ready(function() {
 
         yearlistContainer.children().each(function() {$(this).removeClass(`active`)})
         $(this).addClass(`active`)
-        resumeTitle.text(title)
-        resumeDescription.html(description)
+
+        resumeTitle.fadeOut(function() {
+            $(this).text(title)
+        }).fadeIn();
+
+        resumeDescription.fadeOut(function () {
+            $(this).html(description)
+        }).fadeIn();
     })
-
-
 });
 
 

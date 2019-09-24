@@ -370,7 +370,7 @@
     margin: 0 auto;
     @include mq(desktop) {
         @include background('../images/blue_triangle_background.svg', cover, center, no-repeat);
-        background-size: 35%;
+        background-size: 46%;
         background-position: 0% 100%;
     }
     & h3 {
@@ -811,7 +811,7 @@
         background-position: 0% 100%;
     }
     @include mq(desktop) {
-        background-size: 155%;
+        background-size: 159%;
     }
 }
 
@@ -841,7 +841,7 @@
     font-style: italic;
     color: $color-primary;
     z-index: 1;
-    border-right: solid 1px black;
+    border-right: solid 1px $color-secondary;
     & li {
         margin: 15% 0;
         font-size: 0.9em;

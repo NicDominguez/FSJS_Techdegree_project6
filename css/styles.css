@@ -1095,7 +1095,7 @@ nav ul li:hover {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 35%;
+    background-size: 46%;
     background-position: 0% 100%;
   }
 }
@@ -1608,7 +1608,7 @@ nav ul li:hover {
 }
 @media (min-width: 1200px) {
   .resume-section {
-    background-size: 155%;
+    background-size: 159%;
   }
 }
 
@@ -1644,7 +1644,7 @@ nav ul li:hover {
   font-style: italic;
   color: #17384B;
   z-index: 1;
-  border-right: solid 1px black;
+  border-right: solid 1px #839595;
 }
 .yearlist-container li {
   margin: 15% 0;
