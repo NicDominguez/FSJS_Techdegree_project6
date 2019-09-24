@@ -24,42 +24,13 @@ $color-font--alt    : $white;
 //      Font Stacks Variables
 //==========================================================
 
-// Font Weights
-
-$font-weight--thin      : 100;
-$font-weight--light     : 300;
-$font-weight--medium    : 400;
-$font-weight--bold      : 700;
-$font-weight--ultrabold : 900;
-
-// Font size
-
-$font-size--base       : 16px;
-$font-size--headline   : px-to-em(28px);
-$font-size--blockquote : px-to-em(24px);
-$font-size--input      : px-to-em(14px);
-
 // Font Stack Variables
 
 $font-url--google     : "https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap";
 $font-stack--primary  : 'Didact Gothic', sans-serif;
 
-// Font Style Variables
-
-$font-style--italic: italic;
-
-// Line Height Variables
-
-$font-lh--base   : px-to-em(24px);
-
-//Text Indent Variables
-
-$font-indent   : 10px;
-
-
-
 //==========================================================
-//      Media Query & Breakpoint Variables
+//      Breakpoint Variables
 //==========================================================
 
 // Breakpoints
@@ -68,53 +39,3 @@ $break-tablet    : 767px;
 $break-desktop   : 1200px;
 $break-wide      : 1450px;
 
-//==========================================================
-//      Layout Variables
-//==========================================================
-
-//Width Variables
-
-$width-btn        : px-to-pc(390px);
-$width-blockquote : px-to-pc(360px);
-$width-headline   : px-to-pc(320px);
-$width-navit      : px-to-pc(400px);
-$width-input      : px-to-pc(380px);
-$width-gutter     : 10px;
-
-//Margin Variables
-
-$margin-btn: 5px px-to-pc(6.9px);
-$margin-blockquote: px-to-pc(20px) 0 px-to-pc(20px) px-to-pc(20px);
-$margin-headline: px-to-pc(20px) 0 px-to-pc(20px) px-to-pc(20px);
-$margin-img: 10px auto 20px auto;
-$margin-input: px-to-pc(10px);
-
-//Padding Variables
-
-$padding-btn: 12px 0;
-$padding-img:  px-to-pc(15px);
-$padding-blockquote: 0 px-to-pc(20px);
-$padding-input: 0 0 px-to-pc(10px) 0;
-
-//==========================================================
-//      Border Variables
-//==========================================================
-
-//Border Width Variables
-$bdr-width--blockquote: 10px;
-$bdr-width--img: 1px;
-$bdr-width--input: 5px;
-
-//Border Syle Variables
-$bdr-style--blockquote: solid;
-$bdr-style--img: solid;
-$bdr-style--blockquote: solid;
-$bdr-style--input: solid;
-
-//Border Radius Variables
-$br-blockquote: 5px;
-$br-btn: 5px;
-
-//Border Color Variables
-$bdr-color--img: $grey;
-$bdr-color--blockquote: $color-primary;
