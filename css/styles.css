@@ -1089,16 +1089,6 @@ nav ul li:hover {
 .portfolio-section {
   margin: 0 auto;
 }
-@media (min-width: 1200px) {
-  .portfolio-section {
-    background-image: url("../images/blue_triangle_background.svg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 46%;
-    background-position: 0% 100%;
-  }
-}
 .portfolio-section h3 {
   text-align: center;
   font-weight: 100;
@@ -1595,21 +1585,11 @@ nav ul li:hover {
   }
 }
 .resume-section {
-  background-image: url("../images/blue_triangle_background.svg");
+  background-image: url("../images/Nic_and_kristin_portrait.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-@media (min-width: 767px) {
-  .resume-section {
-    background-size: 130%;
-    background-position: 0 100%;
-  }
-}
-@media (min-width: 1200px) {
-  .resume-section {
-    background-size: 159%;
-  }
+  background-attachment: fixed;
 }
 
 .timeline-container {
@@ -1619,17 +1599,8 @@ nav ul li:hover {
   width: 100%;
   height: 97%;
   border-radius: 20px;
-  background: #FFFFFF;
+  background: rgba(228, 130, 0, 0.85);
   z-index: -1;
-  background: -moz-linear-gradient(left, transparent 15%, #E48200 85%);
-  background: -webkit-linear-gradient(left, transparent 15%, #E48200 85%);
-  background: linear-gradient(to right, transparent 15%, #E48200 85%);
-}
-@media (min-width: 1200px) {
-  .timeline-container {
-    margin-left: 15%;
-    width: 85%;
-  }
 }
 
 .yearlist-container {
@@ -1640,7 +1611,7 @@ nav ul li:hover {
   align-items: center;
   width: 30%;
   max-height: 100%;
-  padding: 5% 2% 40% 2%;
+  padding: 5%;
   font-style: italic;
   color: #17384B;
   z-index: 1;
@@ -1654,20 +1625,12 @@ nav ul li:hover {
 @media (min-width: 767px) {
   .yearlist-container li {
     font-size: 1.1em;
-    margin: 1vh 0;
-    padding-left: 5vw;
   }
 }
 @media (min-width: 1200px) {
   .yearlist-container li {
-    font-size: 1.2em;
-    margin: 7% 0;
-    padding-left: 15%;
-  }
-}
-@media (min-width: 1450px) {
-  .yearlist-container li {
-    margin: 3% 0;
+    font-size: 1.5em;
+    margin: 10% 0;
   }
 }
 .yearlist-container li.active {
@@ -1690,6 +1653,11 @@ nav ul li:hover {
   padding: 10% 5% 20% 5%;
   line-height: 1em;
   overflow-y: scroll;
+}
+@media (min-width: 767px) {
+  .description-container {
+    overflow-y: hidden;
+  }
 }
 .description-container h4 {
   font-size: 1.4em;
@@ -1738,6 +1706,7 @@ nav ul li:hover {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 @media (min-width: 767px) {
   .contact-section {

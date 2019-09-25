@@ -534,7 +534,7 @@ $(document).ready(function() {
     //==========================================================
     //     Global Variables Declaration
     //==========================================================
-
+    const resumeSection = $(`#resume`)
     const yearlistContainer = $(`#yearlist-container`)
     const resumeTitle = $(`#resume-description-title`)
     const resumeDescription = $(`#resume-description`)
@@ -605,6 +605,27 @@ $(document).ready(function() {
     //     Events
     //==========================================================
 
+// changing background size based on window size and resize
+
+/*     $(window).on("resize", function() {
+        let windowWidth = $(window).width();
+        let windowHeight = $(window).height();
+        resumeSection.css("background-size", windowwidth / .9)
+    }) */
+
+
+/*     @include background('../images/blue_triangle_background.svg', cover, left bottom, no - repeat);
+    background - size: 98 %;
+    @include mq(tablet) {
+        background - size: 130 %;
+    }
+    @include mq(desktop) {
+        background - size: 159 %; */
+
+
+
+
+/// cycling through descriptions on year click
     yearlistContainer.on("click", "li", function() {
         let year = $(this).text().slice(0, 4).toString()
         let title = resumeContainerContents[`title` + year]
