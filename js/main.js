@@ -94,7 +94,7 @@ $(document).ready(function() {
         setSkillBarWidthstoZero(hobList, hobSkillList)
     }
 
-    //Set all Skill Lists on Page Load if Desktop
+    //Set all Skill Lists on Page Load if Desktop and window resize
     if ($(window).width() >= 1200) {
         hobList.show()
         wdList.show()
@@ -105,6 +105,23 @@ $(document).ready(function() {
         displayPercentages(hobList, hobSkillList)
         setSkillBarWidths(hobList, hobSkillList)
     }
+
+    $(window).on("resize", function() {
+        if ($(window).width() >= 1200) {
+            hobList.show()
+            wdList.show()
+            pmCategory.css("transform", "scale(1)")
+            wdCategory.css("transform", "scale(1)")
+            hobCategory.css("transform", "scale(1)")
+            displayPercentages(pmList, pmSkillList)
+            setSkillBarWidths(pmList, pmSkillList)
+            displayPercentages(wdList, wdSkillList)
+            setSkillBarWidths(wdList, wdSkillList)
+            displayPercentages(hobList, hobSkillList)
+            setSkillBarWidths(hobList, hobSkillList)
+        }
+    })
+
 
     //Click Events for Each Skill Category
     pmCategory.click(function () {
@@ -534,7 +551,7 @@ $(document).ready(function() {
     //==========================================================
     //     Global Variables Declaration
     //==========================================================
-    const resumeSection = $(`#resume`)
+
     const yearlistContainer = $(`#yearlist-container`)
     const resumeTitle = $(`#resume-description-title`)
     const resumeDescription = $(`#resume-description`)
@@ -604,26 +621,6 @@ $(document).ready(function() {
     //==========================================================
     //     Events
     //==========================================================
-
-// changing background size based on window size and resize
-
-/*     $(window).on("resize", function() {
-        let windowWidth = $(window).width();
-        let windowHeight = $(window).height();
-        resumeSection.css("background-size", windowwidth / .9)
-    }) */
-
-
-/*     @include background('../images/blue_triangle_background.svg', cover, left bottom, no - repeat);
-    background - size: 98 %;
-    @include mq(tablet) {
-        background - size: 130 %;
-    }
-    @include mq(desktop) {
-        background - size: 159 %; */
-
-
-
 
 /// cycling through descriptions on year click
     yearlistContainer.on("click", "li", function() {
