@@ -462,7 +462,7 @@ h4 {
   top: 153%;
 }
 .section-title:nth-of-type(3) {
-  top: 243%;
+  top: 241%;
 }
 .section-title:nth-of-type(4) {
   top: 348%;
@@ -741,7 +741,7 @@ nav ul li:hover {
   align-items: center;
   scroll-snap-align: start;
   padding: 10% 4% 3% 2%;
-  height: 80%;
+  height: 95%;
   font-size: 1em;
   min-width: 95vw;
   z-index: 2;
