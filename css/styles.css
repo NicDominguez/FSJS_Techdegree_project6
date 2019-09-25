@@ -967,6 +967,7 @@ nav ul li:hover {
 }
 @media (min-width: 767px) {
   .category-description {
+    overflow: hidden;
     width: 82%;
     font-size: 1.1em;
   }
@@ -1602,7 +1603,7 @@ nav ul li:hover {
 @media (min-width: 767px) {
   .resume-section {
     background-size: 130%;
-    background-position: 0% 100%;
+    background-position: 0 100%;
   }
 }
 @media (min-width: 1200px) {

@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
 
 //==========================================================
@@ -123,7 +122,7 @@ $(document).ready(function() {
             `);
 
             displayPercentages(pmList, pmSkillList)
-            setSkillBarWidths(pmList, pmSkillList)
+            setTimeout(function() {setSkillBarWidths(pmList, pmSkillList)}, 10);
             setSkillBarWidthstoZero(wdList, wdSkillList)
             setSkillBarWidthstoZero(hobList, hobSkillList)
         }
@@ -144,7 +143,7 @@ $(document).ready(function() {
             `)
 
             displayPercentages(wdList, wdSkillList)
-            setSkillBarWidths(wdList, wdSkillList)
+            setTimeout(function() {setSkillBarWidths(wdList, wdSkillList)}, 10);
             setSkillBarWidthstoZero(pmList, pmSkillList)
             setSkillBarWidthstoZero(hobList, hobSkillList)
         }
@@ -165,7 +164,7 @@ $(document).ready(function() {
             `)
 
             displayPercentages(hobList, hobSkillList)
-            setSkillBarWidths(hobList, hobSkillList)
+            setTimeout(function() {setSkillBarWidths(hobList, hobSkillList)}, 10);
             setSkillBarWidthstoZero(pmList, pmSkillList)
             setSkillBarWidthstoZero(wdList, wdSkillList)
         }
@@ -599,6 +598,8 @@ $(document).ready(function() {
     $(`#yearlist-container li:first-child`).addClass(`active`)
     resumeTitle.text(resumeContainerContents.title1985)
     resumeDescription.html(resumeContainerContents.desc1985)
+
+
 
     //==========================================================
     //     Events

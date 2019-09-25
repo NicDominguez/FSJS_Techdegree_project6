@@ -283,7 +283,8 @@
     font-size: 0.8em;
     height: 23vh;
     overflow: scroll;
-    @include mq(tablet) {
+     @include mq(tablet) {
+        overflow: hidden;
         width: 82%;
         font-size: 1.1em;
     }
@@ -808,7 +809,7 @@
     @include background('../images/blue_triangle_background.svg', cover, center, no-repeat);
     @include mq(tablet) {
         background-size: 130%;
-        background-position: 0% 100%;
+        background-position: 0 100%;
     }
     @include mq(desktop) {
         background-size: 159%;
