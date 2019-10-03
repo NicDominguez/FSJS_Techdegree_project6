@@ -837,6 +837,9 @@
             margin: 10% 0;
 
         }
+        @include mq(wide) {
+            margin: 7% 0;
+        }
         &.active {
             text-decoration: underline;
         }
@@ -867,7 +870,7 @@
             font-size: 2.2em;
         }
         @include mq(desktop) {
-            font-size: 2.5em;
+            font-size: 2.7em;
         }
     }
     & p {
