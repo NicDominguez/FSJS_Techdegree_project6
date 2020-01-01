@@ -1,0 +1,23 @@
+{
+  "name": "fsjs_techdegree_project6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicDominguez/FSJS_Techdegree_project6.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicDominguez/FSJS_Techdegree_project6/issues"
+  },
+  "homepage": "https://github.com/NicDominguez/FSJS_Techdegree_project6#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "^2.0.4"
+  }
+}
