@@ -1,10 +1,25 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 
-const data = require('data.json')
-const path = require('path')
-const pug = require('pug')
+app.set('view engine', 'pug');
 
-app.set('view engine', 'pug')
 
-app.use(express.static('public'))
+app.get('/', (req, res) => {
+    res.render('index');
+});
+
+app.listen(3000, () => {
+    console.log('The application is running on localhose:3000');
+});
+
+
+/* const bodyParser = require('body-parser');
+const port = process.env.PORT || 3000
+
+// Set Middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+
+
+// Import routes
+const routes = require('./routes.js');
+app.use(routes); */
