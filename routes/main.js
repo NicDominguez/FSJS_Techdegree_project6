@@ -4,7 +4,7 @@ const { projects } = require('../data.json')
 
 router.get('/', (req, res) => {
     res.render('index', {
-        prompt: projects
+        projects
     });
 });
 
