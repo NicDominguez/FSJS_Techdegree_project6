@@ -62,17 +62,17 @@
             "project_name": "Interactive Form",
             "description": "",
             "technologies": [
-                "",
-                "",
-                ""
+                "JQuery",
+                "Regular expressions",
+                "JavaScript"
             ],
             "live_link": "http://www.nicdominguez.com/FSJS_Techdegree_project3/",
             "github_link": "https://github.com/NicDominguez/FSJS_Techdegree_project3",
             "image_urls": [
-                "",
-                "",
-                "",
-                ""
+                "/static/images/interactive_form_550x550.jpg",
+                "/static/images/interactive_form_1200x550_1.jpg",
+                "/static/images/interactive_form_1200x550_2.jpg",
+                "/static/images/interactive_form_1200x550_3.jpg"
             ]
         },
 
@@ -81,17 +81,17 @@
             "project_name": "OOP Game Show App",
             "description": "",
             "technologies": [
-                "",
-                "",
+                "Object-Oriented Programming",
+                "JavaScript",
                 ""
             ],
             "live_link": "http://www.nicdominguez.com/FSJS_Techdegree_project4/",
             "github_link": "https://github.com/NicDominguez/FSJS_Techdegree_project4",
             "image_urls": [
-                "",
-                "",
-                "",
-                ""
+                "/static/images/oop_game_show_app_550x550.jpg",
+                "/static/images/oop_game_show_app_1200x550_1.jpg",
+                "/static/images/oop_game_show_app_1200x550_2.jpg",
+                "/static/images/oop_game_show_app_1200x550_3.jpg"
             ]
         },
 
@@ -100,17 +100,17 @@
             "project_name": "Employee Directory",
             "description": "",
             "technologies": [
-                "",
-                "",
-                ""
+                "API Requests",
+                "JQuery",
+                "CSS"
             ],
             "live_link": "http://www.nicdominguez.com/FSJS_Techdegree_project5/",
             "github_link": "https://github.com/NicDominguez/FSJS_Techdegree_project5",
             "image_urls": [
-                "",
-                "",
-                "",
-                ""
+                "/static/images/employee_directory_550x550.jpg",
+                "/static/images/employee_directory_1200x550_1.jpg",
+                "/static/images/employee_directory_1200x550_2.jpg",
+                "/static/images/employee_directory_1200x550_3.jpg"
             ]
         }
     ]
