@@ -3,10 +3,16 @@ const app = express();
 
 app.set('view engine', 'pug');
 
-app.listen(3000, () => {
-    console.log('The application is running on localhost:3000');
-});
+ // Set static files
+ app.use('/static', express.static('public'))
 
+
+ // Import routes
+ const mainRoutes = require('./routes/main');
+ const projectRoutes = require('./routes/projects')
+ 
+ app.use(mainRoutes);
+ app.use('/project', projectRoutes)
 
 /* const bodyParser = require('body-parser');
 const port = process.env.PORT || 3000
@@ -14,12 +20,21 @@ const port = process.env.PORT || 3000
 // Set Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
  */
-app.use('/static', express.static('public'))
+
+ // Create error object from error constructor
+ app.use((req, res, next) => {
+    const err = new Error("I'm sorry, there must have been an error")
+    err.status = 500;
+    next(err)
+ });
 
 
-// Import routes
-const mainRoutes = require('./routes/main');
-const projectRoutes = require('./routes/projects')
+app.use((err, req, res, next) => {
+    res.locals.error = err;
+    res.status(err.status)
+    res.render('error')
+ });
 
-app.use(mainRoutes);
-app.use('/project', projectRoutes)
+ app.listen(3000, () => {
+    console.log('The application is running on localhost:3000');
+});
