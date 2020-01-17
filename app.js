@@ -14,25 +14,19 @@ app.set('view engine', 'pug');
  app.use(mainRoutes);
  app.use('/project', projectRoutes)
 
-/* const bodyParser = require('body-parser');
-const port = process.env.PORT || 3000
-
-// Set Middleware
-app.use(bodyParser.urlencoded({ extended: false }));
- */
-
  // Create error object from error constructor
  app.use((req, res, next) => {
-    const err = new Error("I'm sorry, there must have been an error")
-    err.status = 500;
-    next(err)
+    const err = new Error("I'm sorry, this page does not exist");
+    console.log("The page you are looking for cannot be found.");
+    err.status = 404;
+    next(err);
  });
 
 
 app.use((err, req, res, next) => {
     res.locals.error = err;
-    res.status(err.status)
-    res.render('error')
+    res.status(err.status);
+    res.render('error', err);
  });
 
  app.listen(3000, () => {
