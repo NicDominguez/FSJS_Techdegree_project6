@@ -60,7 +60,7 @@
         {
             "id": 3,
             "project_name": "Interactive Form",
-            "description": "",
+            "description": "This project uses JQuery to create a fully interactive conference registration form. The simplified syntax uses regular expressions for validation and provides conditional behavior depending on the interactions by the user Form interactivity is a fundamental skill for front-end web development and can be implemented in a variety of online situations.",
             "technologies": [
                 "JQuery",
                 "Regular expressions",
@@ -79,11 +79,11 @@
         {
             "id": 4,
             "project_name": "OOP Game Show App",
-            "description": "",
+            "description": "Games are an ideal way to demonstrate the usefulness of Object-Oriented Programming. The Phrase Hunter game here uses vanilla JavaScript to construct classes to manage various aspects of the game. The modular nature of the classes allow for easy customization as you can see by the games familiar theme. All interactivity and conditional behavior is included to make sure the user can follow the logic of the game without error.",
             "technologies": [
                 "Object-Oriented Programming",
                 "JavaScript",
-                ""
+                "Event Handlers"
             ],
             "live_link": "http://www.nicdominguez.com/FSJS_Techdegree_project4/",
             "github_link": "https://github.com/NicDominguez/FSJS_Techdegree_project4",
@@ -98,7 +98,7 @@
         {
             "id": 5,
             "project_name": "Employee Directory",
-            "description": "",
+            "description": "This employee directory uses a third-party API to retrieve employee data. The JQuery requests the JSON object form the API and parses the data to list a selection of 12 random employees from the API. I also created a modal window view to see more detailed information about each employee. Additional features include the ability to cycle through the employees in the modal window and to filter the search results by employee name. This is a highly functional and easily deployable project that any small start up could benefit from.",
             "technologies": [
                 "API Requests",
                 "JQuery",
