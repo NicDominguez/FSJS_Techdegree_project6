@@ -5,11 +5,14 @@ const { projects } = require('../data.json')
 
 // Dynamically renders project pug file depending on project route destination
 router.get('/:id', (req, res) => {
-    res.render('project', {
-        projects, req 
-    });
-
+    if (projects[req.params.id]) {        
+            res.render('project', {
+                projects, req
+        });
+    } else {
+        console.log("Project does not exist")
+        res.redirect('/')
+    }
 });
-
 
 module.exports = router;
